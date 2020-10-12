@@ -1,0 +1,26 @@
+{
+  "name": "project-2-group-15",
+  "version": "1.0.0",
+  "description": "1. Create New Repo.\r 2. Add README and node gitignore.\r 3. Add contributors (Monday).",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andrew0502/project-2-group-15.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Andrew0502/project-2-group-15/issues"
+  },
+  "homepage": "https://github.com/Andrew0502/project-2-group-15#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "mysql": "^2.18.1"
+  }
+}
