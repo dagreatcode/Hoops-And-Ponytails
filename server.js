@@ -1,6 +1,7 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
 const app = express();
+const db = require("./models");
 
 const PORT = process.env.PORT || 8080;
 
@@ -22,7 +23,10 @@ app.get("/api/config", (req, res) => {
     });
 });
 
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+db.sequelize.sync().then(function (){
+    app.listen(PORT, () => {
+        console.log(`Server is running on http://localhost:${PORT}`);
+    });
 });
+
 

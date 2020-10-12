@@ -72,4 +72,5 @@ CREATE DATABASE starter_db;
 USE starter_db;
 ```
 5. Create your first model
-6. Connect the database to our server, by wrapping app.listen in ` db.sequelize.sync()`
+6. Import db to server.js
+7. Connect the database to our server, by wrapping app.listen in ` db.sequelize.sync()`
