@@ -62,4 +62,12 @@ app.get("/", (req, res) => {
 ```
 
 ## Add Database/Models
-1. `
+1. `npm install -g sequelize-cli`
+2. `npm install sequelize`
+3. `sequelize init:config & sequelize init:models`
+4. modify config/config.json with password and database name in development.
+```sql
+DROP DATABASE IF EXISTS starter_db;
+CREATE DATABASE starter_db;
+USE starter_db;
+```
