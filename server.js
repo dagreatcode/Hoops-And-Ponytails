@@ -1,5 +1,5 @@
 const express = require("express");
-require exphbs = require("express-handlebars");
+const exphbs = require("express-handlebars");
 const app = express();
 
 const PORT = process.env.PORT || 8080;
@@ -11,7 +11,11 @@ app.use(express.static("public"));
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-
+// views routes
+app.get("/", (req, res) => {
+    res.render("index");
+});
+// api routes
 app.get("/api/config", (req, res) => {
     res.json({
         success: true,

@@ -37,3 +37,29 @@ app.set("view engine", "handlebars");
 ```
 
 4. setup your views directory with proper sub folders.
+5. add boilerplate and "triple-stache" into main.handlebars.
+```javascript
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {{{body}}}
+</body>
+</html>
+```
+
+6. (optional) Include your css library and jQuery
+7. Add "Hellow WOrld" to the index.handlebars
+8. Add a server route to test the index.handlebars file.
+
+```javascript
+app.get("/", (req, res) => {
+    res.render("index");
+```
+
+## Add Database/Models
+1. `
