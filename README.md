@@ -71,3 +71,5 @@ DROP DATABASE IF EXISTS starter_db;
 CREATE DATABASE starter_db;
 USE starter_db;
 ```
+5. Create your first model
+6. Connect the database to our server, by wrapping app.listen in ` db.sequelize.sync()`
