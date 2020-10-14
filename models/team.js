@@ -5,27 +5,27 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING
         }, 
         player_number: {
-            type: DataTypes.INTERGER
+            type: DataTypes.INTEGER
         }, 
         api_player_id: {
             type: DataTypes.STRING
         }, 
         player_id:{
-            type: DataTypes.INTERGER
+            type: DataTypes.INTEGER
         }, 
         username: {
             type: DataTypes.STRING
         } 
     });
 
-    team_name.associate = function(models) {
+    // Team.associate = function(models) {
       
-        Team.belongsTo(models.Player, {
-          foreignKey: {
-            allowNull: true
-          }
-        });
-      };
+    //     Team.belongsTo(models.Player, {
+    //       foreignKey: {
+    //         allowNull: true
+    //       }
+    //     });
+    //   };
     
       return Team;
 
