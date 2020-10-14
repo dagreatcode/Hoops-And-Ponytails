@@ -4,7 +4,7 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING
         },
         team_id: {
-        type: DataTypes.INTERGER
+        type: DataTypes.INTEGER
       },
         player_name: {
         type: DataTypes.TEXT
@@ -13,31 +13,31 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.TEXT 
       }, 
       jersey_number: {
-          type: DataTypes.INTERGER
+          type: DataTypes.INTEGER
       }, 
       season_points: {
-          type: DataTypes.INTERGER
+          type: DataTypes.INTEGER
       }, 
       three_point_percent: {
-          type: DataTypes.INTERGER
+          type: DataTypes.INTEGER
       }, 
       field_goal_percent: { 
-          type: DataTypes.INTERGER
+          type: DataTypes.INTEGER
       }, 
       assist:{
-          type: DataTypes.INTERGER
+          type: DataTypes.INTEGER
       }, 
       turnover:{
-          type: DataTypes.INTERGER
+          type: DataTypes.INTEGER
       }, 
       blocks:{
-          type:DataTypes.INTERGER
+          type:DataTypes.INTEGER
       }, 
       steals:{
-          type:DataTypes.INTERGER
+          type:DataTypes.INTEGER
       }, 
       rebounds: {
-          type:DataTypes.INTERGER
+          type:DataTypes.INTEGER
       }
     });
   
