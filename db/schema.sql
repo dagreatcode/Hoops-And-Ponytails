@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS starter_db;
-CREATE DATABASE starter_db;
-USE starter_db;
+DROP DATABASE IF EXISTS hoops_db;
+CREATE DATABASE hoops_db;
+USE hoops_db;
