@@ -1,1 +1,21 @@
-<h1>Hello World!</h1>
+{{navbar}}
+<div class = "row">
+    
+{{#if message}}
+<div class="error">
+  <span style="color: red">{{message}}</span>
+</div>
+{{/if}}
+<form action="/user" method="post">
+  <div>
+      <label>Username:</label>
+      <input type="text" name="username" />
+  </div>
+  <div>
+      <label>Email:</label>
+      <input type="email" name="email" />
+  </div>
+  
+  <button type="submit">Log In</button>
+</form>
+</div>
