@@ -27,3 +27,11 @@
 //   });
 
 // };
+
+// router.get("/name of handlebars file", (req, res) => {
+//     // ALL the Things should be displayed
+//     // DB query
+//     db.index.findAll().then((allThings) => {
+//       res.render("name of handlebars file", { allThings: allThings });
+//     });
+//   });
