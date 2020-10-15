@@ -1,0 +1,55 @@
+<div> 
+  {{>navbar/nav}}
+</div>
+
+<h3> Team Challenge</h3>
+
+<form class="challenge-form">
+  <div class="grid-container">
+    <div class="grid-x grid-padding-x">
+      <div class="medium-4 cell">
+        <label> Team 1  
+          <select>
+            <option  for="teamOne" value="husker">Husker</option>
+            <option for="teamOne" value="starbuck">Starbuck</option>
+            <option for="teamOne" value="hotdog">Hot Dog</option>
+            <option for="teamOne" value="apollo">Apollo</option>
+          </select>
+        </label>  
+      </div>
+      <div class="medium-4 cell">
+        <label>Select Team
+          <select>
+            <option for="teamTwo"value="husker">Husker</option>
+            <option for="teamTwo" value="starbuck">Starbuck</option>
+            <option for="teamTwo" value="hotdog">Hot Dog</option>
+            <option for="teamTwo" value="apollo">Apollo</option>
+          </select>
+        </label>  
+      </div>
+      <div class ='medium-4 cell'> 
+        <input for='challengeSubmit' type="submit" value="Challenge">
+      </div>
+    </div>
+  </div>
+</form>
+
+<div class="challenge-results" > 
+</div>
+
+<script> 
+  var resultsDiv = $(".challenge-results");
+
+  $(".challenge-form").on("submit", function (event) {
+    event.preventDefault();
+    console.log("clicked");
+
+    resultsDiv.append("<h3>"+ "Worked" + "</h3>");
+  //create tag 
+  
+  //text for tag 
+  //append tag 
+
+
+  })
+</script>
