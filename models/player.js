@@ -9,9 +9,6 @@ module.exports = function(sequelize, DataTypes) {
         player_name: {
         type: DataTypes.TEXT
       }, 
-      player_height: {
-        type: DataTypes.TEXT 
-      }, 
       jersey_number: {
           type: DataTypes.INTEGER
       }, 
@@ -41,14 +38,14 @@ module.exports = function(sequelize, DataTypes) {
       }
     });
   
-    Player.associate = function(models) {
+    // Player.associate = function(models) {
       
-      Player.belongsTo(models.Team, {
-        foreignKey: {
-          allowNull: true
-        }
-      });
-    };
+    //   Player.belongsTo(models.Team, {
+    //     foreignKey: {
+    //       allowNull: true
+    //     }
+    //   });
+    // };
   
     return Player;
   };
