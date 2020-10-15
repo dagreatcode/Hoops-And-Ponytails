@@ -13,12 +13,11 @@ const db = require("../models");
 module.exports = function(app) {
 
 
-//     // full CRUD for users
-//     // change dbPlayer name
+
 // //======================================================================================
 //     // GET route for getting all of the users
     router.get("/api/user/", function(req, res) {
-        db.User.findAll({})
+        db.User.findAll()
         .then(function(dbUserGet) {
             res.json(dbUserGet);
         });
@@ -26,7 +25,7 @@ module.exports = function(app) {
 
 // GET route for getting all of the teams
   router.get("/api/team/", function(req, res) {
-    db.Team.findAll({})
+    db.Team.findAll()
       .then(function(dbTeamGet) {
         res.json(dbTeamGet);
       });
@@ -34,7 +33,7 @@ module.exports = function(app) {
 
      // GET route for getting all of the players
  router.get("/api/player/", function(req, res) {
-    db.Player.findAll({})
+    db.Player.findAll()
       .then(function(dbPlayerGet) {
         res.json(dbPlayerGet);
       });
@@ -49,7 +48,7 @@ module.exports = function(app) {
       }
     })
       .then(function(dbUserSingle) {
-        res.json(dbUser);
+        res.json(dbUserSingle);
       });
   });
 

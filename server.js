@@ -6,7 +6,7 @@ const {
   } = require("@handlebars/allow-prototype-access");
 const app = express();
 const db = require("./models");
-// const apiRoutes = require("./routes/api-routes.js");
+const apiRoutes = require("./routes/api-routes.js");
  const htmlRoutes = require("./routes/html-routes.js");
 
 const PORT = process.env.PORT || 8080;
@@ -19,8 +19,8 @@ app.engine("handlebars", exphbs({ defaultLayout: "main",
 handlebars: allowInsecurePrototypeAccess(handlebars), }));
 app.set("view engine", "handlebars");
 
-// app.use(apiRoutes);
-// app.use(htmlRoutes);
+apiRoutes(app);
+htmlRoutes(app);
 
 
 // // views routes
