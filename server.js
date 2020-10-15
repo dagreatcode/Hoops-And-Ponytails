@@ -19,7 +19,7 @@ app.engine("handlebars", exphbs({ defaultLayout: "main",
 handlebars: allowInsecurePrototypeAccess(handlebars), }));
 app.set("view engine", "handlebars");
 
-// app.use(apiRoutes);
+app.use(apiRoutes);
 app.use(htmlRoutes);
 
 // views routes

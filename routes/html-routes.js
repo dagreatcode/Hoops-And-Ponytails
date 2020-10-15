@@ -4,8 +4,8 @@ const db = require("../models");
 const path = require("path");
 
 // VIEWS ROUTES
-
-router.get("/", (req, res) => {
+module.exports = (app) => {
+router.get("/home", (req, res) => {
   if(req.email) {
       res.redirect("/home");
   }
@@ -23,6 +23,6 @@ router.get("/editteams", (req, res) => {
   router.get("/teamchallenge", (req, res) => {
     res.sendFile(Path.join(__dirname, "../views/teamchallenge.handlebars"))
 });
+}
 
-module.exports = router;
 
