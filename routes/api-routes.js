@@ -19,29 +19,26 @@ module.exports = function(app) {
 //     // GET route for getting all of the users
     router.get("/api/user/", function(req, res) {
         db.User.findAll({})
-        .then(function(dbUser) {
-            res.json(dbUser);
+        .then(function(dbUserGet) {
+            res.json(dbUserGet);
         });
     });
 
 // GET route for getting all of the teams
   router.get("/api/team/", function(req, res) {
     db.Team.findAll({})
-      .then(function(dbTeam) {
-        res.json(dbTeam);
+      .then(function(dbTeamGet) {
+        res.json(dbTeamGet);
       });
   });
 
      // GET route for getting all of the players
  router.get("/api/player/", function(req, res) {
     db.Player.findAll({})
-      .then(function(dbPlayer) {
-        res.json(dbPlayer);
+      .then(function(dbPlayerGet) {
+        res.json(dbPlayerGet);
       });
   });
-
-
-
 
 // //======================================================================================
    // Get route for retrieving a single user
@@ -51,7 +48,7 @@ module.exports = function(app) {
         id: req.params.user_id
       }
     })
-      .then(function(dbUser) {
+      .then(function(dbUserSingle) {
         res.json(dbUser);
       });
   });
@@ -63,8 +60,8 @@ module.exports = function(app) {
         id: req.params.team_id
       }
     })
-      .then(function(dbTeam) {
-        res.json(dbTeam);
+      .then(function(dbTeamSingle) {
+        res.json(dbTeamSingle);
       });
   });
 
@@ -75,8 +72,8 @@ module.exports = function(app) {
         id: req.params.player_id
       }
     })
-      .then(function(dbPlayer) {
-        res.json(dbPlayer);
+      .then(function(dbPlayerSingle) {
+        res.json(dbPlayerSingle);
       });
   });
 
@@ -92,8 +89,8 @@ module.exports = function(app) {
         id: req.params.user_id
       }
     })
-      .then(function(dbUser) {
-        res.json(dbUser);
+      .then(function(dbUserDelete) {
+        res.json(dbUserDelete);
       });
   });
 
@@ -104,8 +101,8 @@ module.exports = function(app) {
         id: req.params.team_id
       }
     })
-      .then(function(dbTeam) {
-        res.json(dbTeam);
+      .then(function(dbTeamDelete) {
+        res.json(dbTeamDelete);
       });
   });
    // DELETE route for deleting players
@@ -115,8 +112,8 @@ module.exports = function(app) {
         id: req.params.player_id
       }
     })
-      .then(function(dbPlayer) {
-        res.json(dbPlayer);
+      .then(function(dbPlayerDelete) {
+        res.json(dbPlayerDelete);
       });
   });
 
@@ -130,8 +127,8 @@ module.exports = function(app) {
           id: req.body.user_id
         }
       })
-      .then(function(dbUser) {
-        res.json(dbPlayer);
+      .then(function(dbUserPut) {
+        res.json(dbPlayerPut);
       });
   });
 
@@ -143,8 +140,8 @@ module.exports = function(app) {
           id: req.body.team_id
         }
       })
-      .then(function(dbTeam) {
-        res.json(dbTeam);
+      .then(function(dbTeamPut) {
+        res.json(dbTeamPut);
       });
   });
 
@@ -156,8 +153,8 @@ module.exports = function(app) {
           id: req.body.player_id
         }
       })
-      .then(function(dbPlayer) {
-        res.json(dbPlayer);
+      .then(function(dbPlayerPut) {
+        res.json(dbPlayerPut);
       });
   });
 }

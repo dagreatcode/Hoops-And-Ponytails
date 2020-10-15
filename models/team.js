@@ -13,17 +13,15 @@ module.exports = function(sequelize, DataTypes) {
         player_id:{
             type: DataTypes.INTEGER
         }, 
-        username: {
-            type: DataTypes.STRING
+        user_id: {
+            type: DataTypes.INTEGER
         } 
     });
 
     Team.associate = function(models) {
-      
-        Team.belongsTo(models.Player, {
-          foreignKey: {
-            allowNull: true
-          }
+        Team.belongsToMany(models.Player, {
+            through: "player",
+            foreignKey: "user_id",
         });
       };
     
