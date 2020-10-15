@@ -9,35 +9,11 @@ module.exports = function(sequelize, DataTypes) {
         player_name: {
         type: DataTypes.TEXT
       }, 
-      player_height: {
-        type: DataTypes.TEXT 
-      }, 
       jersey_number: {
           type: DataTypes.INTERGER
       }, 
       season_points: {
           type: DataTypes.INTERGER
-      }, 
-      three_point_percent: {
-          type: DataTypes.INTERGER
-      }, 
-      field_goal_percent: { 
-          type: DataTypes.INTERGER
-      }, 
-      assist:{
-          type: DataTypes.INTERGER
-      }, 
-      turnover:{
-          type: DataTypes.INTERGER
-      }, 
-      blocks:{
-          type:DataTypes.INTERGER
-      }, 
-      steals:{
-          type:DataTypes.INTERGER
-      }, 
-      rebounds: {
-          type:DataTypes.INTERGER
       }
     });
   
