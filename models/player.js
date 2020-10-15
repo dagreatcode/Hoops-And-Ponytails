@@ -1,10 +1,12 @@
 module.exports = function(sequelize, DataTypes) {
     var Player = sequelize.define("Player", {
         api_player_id: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING,
+            allowNull: true
         },
         team_id: {
-        type: DataTypes.INTEGER
+        type: DataTypes.INTEGER,
+        allowNull: true
       },
         player_name: {
         type: DataTypes.TEXT
@@ -13,28 +15,7 @@ module.exports = function(sequelize, DataTypes) {
           type: DataTypes.INTEGER
       }, 
       season_points: {
-          type: DataTypes.INTEGER
-      }, 
-      three_point_percent: {
-          type: DataTypes.INTEGER
-      }, 
-      field_goal_percent: { 
-          type: DataTypes.INTEGER
-      }, 
-      assist:{
-          type: DataTypes.INTEGER
-      }, 
-      turnover:{
-          type: DataTypes.INTEGER
-      }, 
-      blocks:{
-          type:DataTypes.INTEGER
-      }, 
-      steals:{
-          type:DataTypes.INTEGER
-      }, 
-      rebounds: {
-          type:DataTypes.INTEGER
+          type: DataTypes.DECIMAL(10,2)
       }
     });
   
