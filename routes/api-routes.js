@@ -1,5 +1,4 @@
 var db = require("../models");
-
 // model for user
 // model for player
 // model for team
@@ -112,7 +111,7 @@ module.exports = function(app) {
   });
 
   //======================================================================================
-  
+
   // PUT route for updating users
   app.put("/api/user", function(req, res) {
     db.User.update(req.body,

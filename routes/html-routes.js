@@ -1,37 +1,28 @@
-// // *********************************************************************************
-// // html-routes.js - this file offers a set of routes for sending users to the various html pages
-// // *********************************************************************************
+const express = require("express");
+const router = express.Router();
+const db = require("../models");
+const path = require("path");
 
-// // Dependencies
-// // =============================================================
-// var path = require("path");
+// VIEWS ROUTES
 
-// // Routes
-// // =============================================================
-// module.exports = function(app) {
+router.get("/", (req, res) => {
+  if(req.email) {
+      res.redirect("/home");
+  }
+  res.sendFile(path.join(__dirname, "../views/home.handlebars"));
+});
 
-//   // Each of the below routes just handles the HTML page that the user gets sent to.
+router.get("/index", (req, res) => {
+  res.sendFile(Path.join(__dirname, "../views/index.handlebars"))
+});
 
-//   // index route loads view.html
-//   app.get("/", function(req, res) {
-//     res.sendFile(path.join(__dirname, "../public/blog.html"));
-//   });
+router.get("/editteams", (req, res) => {
+    res.sendFile(Path.join(__dirname, "../views/editteams.handlebars"))
+});
 
-//   app.get("/cms", function(req, res) {
-//     res.sendFile(path.join(__dirname, "../public/cms.html"));
-//   });
+  router.get("/teamchallenge", (req, res) => {
+    res.sendFile(Path.join(__dirname, "../views/teamchallenge.handlebars"))
+});
 
-//   // blog route loads blog.html
-//   app.get("/blog", function(req, res) {
-//     res.sendFile(path.join(__dirname, "../public/blog.html"));
-//   });
+module.exports = router;
 
-// };
-
-// router.get("/name of handlebars file", (req, res) => {
-//     // ALL the Things should be displayed
-//     // DB query
-//     db.index.findAll().then((allThings) => {
-//       res.render("name of handlebars file", { allThings: allThings });
-//     });
-//   });
