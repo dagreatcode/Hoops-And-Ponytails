@@ -1,5 +1,6 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
+const handlebars = require("handlebars");
 const {
     allowInsecurePrototypeAccess,
   } = require("@handlebars/allow-prototype-access");
@@ -18,7 +19,7 @@ app.engine("handlebars", exphbs({ defaultLayout: "main",
 handlebars: allowInsecurePrototypeAccess(handlebars), }));
 app.set("view engine", "handlebars");
 
-app.use(apiRoutes);
+// app.use(apiRoutes);
 app.use(htmlRoutes);
 
 // views routes
