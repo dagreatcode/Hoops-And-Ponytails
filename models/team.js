@@ -18,14 +18,14 @@ module.exports = function(sequelize, DataTypes) {
         } 
     });
 
-    Team.associate = function(models) {
+    // Team.associate = function(models) {
       
-        Team.belongsTo(models.Player, {
-          foreignKey: {
-            allowNull: true
-          }
-        });
-      };
+    //     Team.belongsTo(models.Player, {
+    //       foreignKey: {
+    //         allowNull: true
+    //       }
+    //     });
+    //   };
     
       return Team;
 
