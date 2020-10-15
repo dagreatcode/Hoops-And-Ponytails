@@ -11,23 +11,37 @@
 </div>
 <form class="build-your-team-form"></form>
     <div class="grid-container">
-        <div class="col-sm-4">
-            <div class"columns medium-4">column</div>
-        </div>
-        <div class="col-sm-4">
-            <button class"columns medium-2" type="add">ADD</button>
-            <button class"columns medium-2" type="delete">Trash</button>
-        </div>
-        <div class="col-sm-">
-            <div class="teambox">
-                <div class"columns medium-4">column</div>
-            </div>
-        </div>
-        <div>
-            <button type="save">SAVE</button>
-        </div>
         <div class="row align-justify">
-        <button type="save">SAVE</button>
+            <div class="col-sm-4">
+                <div class="columns medium-4">Search Results</div>
+            </div>
+            <div class="col-sm-4">
+                <button class="columns medium-2" type="add">ADD</button>
+                <button class="columns medium-2" type="delete">Trash</button>
+            </div>
+            <div class="col-sm-4">
+                <div class="teambox">
+                    <div class="columns medium-4">Team</div>
+                </div>
+            </div>
+            <div>
+                <button type="save">SAVE</button>
+            </div>
         </div>
     </div>
 </form>
+
+{{!-- <script type="text/javascript">
+    $(".delete").on("click", function(event) {
+        let id = $(this).data("teambox");
+
+        $.ajax("/api/ /" + id, {
+        type: "DELETE"
+        }).then(
+            function() {
+            console.log("deleted id ", id);
+            location.reload();
+            }
+        );
+    });
+</script> --}}
