@@ -36,6 +36,9 @@ module.exports = function(app) {
       });
   });
 
+
+
+
 //======================================================================================
    // Get route for retrieving a single user
   app.get("/api/user/:user_id", function(req, res) {
@@ -73,7 +76,10 @@ module.exports = function(app) {
       });
   });
 
-  //======================================================================================
+
+
+
+  //===Delete Routes===================================================================================
 
   // DELETE route for deleting users
   app.delete("/api/user/:user_id", function(req, res) {
