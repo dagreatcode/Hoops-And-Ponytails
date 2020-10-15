@@ -4,7 +4,7 @@
 
 <h3> Team Challenge</h3>
 
-<form>
+<form class="challenge-form">
   <div class="grid-container">
     <div class="grid-x grid-padding-x">
       <div class="medium-4 cell">
@@ -28,8 +28,28 @@
         </label>  
       </div>
       <div class ='medium-4 cell'> 
-        <input type="submit" value="Challenge">
+        <input for='challengeSubmit' type="submit" value="Challenge">
       </div>
     </div>
   </div>
 </form>
+
+<div class="challenge-results" > 
+</div>
+
+<script> 
+  var resultsDiv = $(".challenge-results");
+
+  $(".challenge-form").on("submit", function (event) {
+    event.preventDefault();
+    console.log("clicked");
+
+    resultsDiv.append("<h3>"+ "Worked" + "</h3>");
+  //create tag 
+  
+  //text for tag 
+  //append tag 
+
+
+  })
+</script>
