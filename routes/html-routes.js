@@ -14,31 +14,37 @@ module.exports = function(app){
   });
 
   app.get("/teamchallenge", (req,res)=> {
-      // res.render("teamchallenge",{
-      //   testing:"example text"
-      // })
-      Team.findAll({
-        where: {
-          userId: req.user_id
-        }
-      }).then((teams)=> {
-        res.render("teamschallenge", {teams: teams} )
-      }).catch((err)=> {
-        console.log("err finding the teams")
-        res.json({
-          error:true,
-        });
-      });
-  });
-  app.get("/index", (req, res) => {
-    res.render("index")
-    // do I need both this and the app.get for "/" ?
+      res.render("teamchallenge")
+      // Team.findAll({
+      //   where: {
+      //     userId: req.user_id
+      //   }
+      // }).then((teams)=> {
+      //   res.render("teamschallenge", {teams: teams} )
+      // }).catch((err)=> {
+      //   console.log("err finding the teams")
+      //   res.json({
+      //     error:true,
+      //   });
+      // });
   });
   app.get("/signup", (req, res) => {
     res.render("signup")
   });
   app.get("/buildyourteam", (req, res) => {
     res.render("buildyourteam")
+  });
+  app.get("/yourteam", (req, res) => {
+    res.render("yourteam")
+  });
+  app.get("/index", (req, res) => {
+    res.render("index")
+  });
+  app.get("/home", (req, res) => {
+    res.render("home")
+  });
+  app.get("/editteams", (req, res) => {
+    res.render("editteams")
   });
 };
 
