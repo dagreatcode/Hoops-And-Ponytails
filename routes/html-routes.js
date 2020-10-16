@@ -14,21 +14,22 @@ module.exports = function(app){
   });
 
   app.get("/teamchallenge", (req,res)=> {
+    res.render("teamchallenge");
       // res.render("teamchallenge",{
       //   testing:"example text"
       // })
-      Team.findAll({
-        where: {
-          userId: req.user_id
-        }
-      }).then((teams)=> {
-        res.render("teamschallenge", {teams: teams} )
-      }).catch((err)=> {
-        console.log("err finding the teams")
-        res.json({
-          error:true,
-        });
-      });
+      // Team.findAll({
+      //   where: {
+      //     userId: req.user_id
+      //   }
+      // }).then((teams)=> {
+      //   res.render("teamschallenge", {teams: teams} )
+      // }).catch((err)=> {
+      //   console.log("err finding the teams")
+      //   res.json({
+      //     error:true,
+      //   });
+      // });
   });
   app.get("/index", (req, res) => {
     res.render("index")
@@ -39,6 +40,9 @@ module.exports = function(app){
   });
   app.get("/buildyourteam", (req, res) => {
     res.render("buildyourteam")
+  });
+  app.get("/editteams", (req,res) => {
+    res.render("editteams")
   });
 };
 
