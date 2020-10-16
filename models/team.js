@@ -9,14 +9,12 @@ module.exports = function(sequelize, DataTypes) {
         } 
     });
 
-    // Team.associate = function(models) {
-      
-    //     Team.belongsTo(models.Player, {
-    //       foreignKey: {
-    //         allowNull: true
-    //       }
-    //     });
-    //   };
+    Team.associate = function(models) {
+        Team.belongsToMany(models.Player, {
+            through: "player",
+            foreignKey: "user_id",
+        });
+      };
     
       return Team;
 

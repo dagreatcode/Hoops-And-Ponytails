@@ -1,24 +1,75 @@
+loginpage
+
+
+<div class = "container">
+
 <div> 
   {{>navbar/nav}}
 </div>
 
+
 <div class = "row">
+  <h2>Log In</h2>
     
 {{#if message}}
 <div class="error">
   <span style="color: red">{{message}}</span>
 </div>
 {{/if}}
+
+<form class = "login">
 <form action="/user" method="post">
-  <div>
-      <label>Username:</label>
-      <input type="text" name="username" />
+  <div class = "form-group">
+      <label for = "userNameInput">Username:</label>
+      <input type="text" class ="form-control" id="username-input" placeholder ="Username">
   </div>
-  <div>
-      <label>Email:</label>
-      <input type="email" name="email" />
+
+  <div class = "form-group">
+      <label for = "emailInput">Email:</label>
+      <input type="email" class ="form-control" id="email-input" placeholder ="Email">
   </div>
   
-  <button type="submit">Log In</button>
+  <button type="submit" class= "btn btn-default">Log In</button>
 </form>
+</form>
+<br>
+
+<!--ADDED LINK TO SIGN UP PAGE-->
+    <p>Don't have an account? Sign up <a href="./signup.handlebars">here</a></p>
+
 </div>
+</div>
+
+<!--CODE IS HERE FOR NOW-->
+<script>
+//var logInForm = $("form.login");
+//var usernameInput = $("input#username-input");
+//var emailInput = $("input#email-input");
+
+loginForm.on("submit", function(event) {
+  event.preventDefault();
+  var userData = {
+    username: usernameInput.val().trim(),
+    email: emailInput.val().trim()
+  };
+
+  if (!userData.username || !userData.email) {
+    return;
+  }
+
+  userLogin(userData.username, userData.email);
+  usernameInput.val("");
+  emailInput.val("");
+});
+
+function userLogin(username, email) {
+  $.post("/api/login", {
+    username: username,
+    email: email
+  }).then(function() {
+    window.location.replace("/yourteams");
+  }).catch(function(err) {
+    console.log(err);
+  });
+};
+</script>
