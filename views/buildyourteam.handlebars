@@ -11,7 +11,7 @@
 </form>
 <div class="grid-container">
   <div class="grid-x grid-margin-x small-up-2 medium-up-3">
-    <div class="cell">
+    <div id="select-team" class="cell">
         <label>Select Multiple Teams
         <select 12 Teams>
             <option value="team1">Dream</option>
@@ -32,7 +32,6 @@
     </div>
     <div class="cell">
       <div class="card">
-        <img src="assets/img/generic/rectangle-1.jpg">
         <div class="card-section">
             <!-- Top Center -->
             <button class="button" type="button" data-toggle="example-dropdown-top-center">Add</button>
@@ -43,17 +42,17 @@
         </div>
       </div>
     </div>
-    <div class="cell">
-        <label>Your Team
-        <select Only Five5>
-            <option value="value1">One</option>
-            <option value="value2">Two</option>
-            <option value="value3">Three</option>
-            <option value="value4">Four</option>
-            <option value="value5">Five</option>
-        </select>
-        </label>
-    </div>
+    <ul class = "selected-team">
+    {{#each team}}
+        <li>
+            <p>
+                {{this.id}}. {{this.team}}
+
+                <button data-teamid="{{this.id}}" class="delteam">Delete</button>
+            </p>
+        </li>
+    {{/each}}
+    </ul>
     <!-- Bottom Center -->
     <button class="button" type="button" data-toggle="example-dropdown-bottom-center">Save</button>
     </div>
@@ -61,18 +60,51 @@
 </div>
 
 
+{{!-- 
+<script type="text/javascript">
+  var searchForm = $("#searchteam");
 
-{{!-- <script type="text/javascript">
-    $(".delete").on("click", function(event) {
-        let id = $(this).data("teambox");
-
-        $.ajax("/api/ /" + id, {
-        type: "DELETE"
-        }).then(
-            function() {
-            console.log("deleted id ", id);
-            location.reload();
-            }
-        );
+    searchForm.on("submit", function (event) {
+      event.preventDefault();
+      console.log("clicked")
     });
+  $(".delete").on("click", function(event) {
+    var id = $(this).data("value1");
+
+    // Send the DELETE request.
+    $.ajax("/api/editteam/" + id, {
+      type: "DELETE",
+      data: data
+    }).then(
+      function() {
+        console.log("deleted id ", id);
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  });
+
+
+  $("#addeam").on("submit", function(event) {
+    // Make sure to preventDefault on a submit event.
+    event.preventDefault();
+
+    var id = $("[name=id]").val().trim();
+
+    var updatedTeam = {
+      team: $("#updateteam [name=team]").val().trim()
+    };
+
+    // Send the PUT request.
+    $.ajax("/api/editteam/" + id, {
+      type: "PUT",
+      data: updatedTeam
+    }).then(
+      function() {
+        console.log("updated id ", id);
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  });
 </script> --}}
