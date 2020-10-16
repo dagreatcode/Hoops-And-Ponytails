@@ -41,12 +41,26 @@
 <!--SCRIPT AREA FOR NOW-->
 
 <script type="text/javascript">
+
+
+
+var searchForm = $("#searchplayers");
+
+  searchForm.on("submit",function (event){
+    event.preventDefault();
+    console.log("clicked")
+  })
+
+  
+
+
   $(".delplayer").on("click", function(event) {
     var id = $(this).data("playerid");
 
     // Send the DELETE request.
     $.ajax("/api/editplayers/" + id, {
-      type: "DELETE"
+      type: "DELETE",
+      data:dummy
     }).then(
       function() {
         console.log("deleted id ", id);
@@ -79,6 +93,10 @@
       }
     );
   });
+
+
+
+
 </script>
 
 
