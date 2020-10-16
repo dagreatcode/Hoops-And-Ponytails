@@ -1,19 +1,23 @@
 const express = require("express");
-const router = express.Router();
+// const router = express.Router();
 const db = require("../models");
 const path = require("path");
 const app = express();
 
 // VIEWS ROUTES
-module.export = function(app){
+module.exports = function(app){
   app.get("/", (req, res) => {
-    res.redirect("index")
+    res.render("index")
   });
 
   app.get("/editteams", (req,res)=> {
     res.render("");
     // res.send("works");
+    
   })
+  app.get("/teamchallenge", (req, res) => {
+    res.render("teamchallenge")
+});
 };
 
   // 
@@ -40,9 +44,7 @@ module.export = function(app){
 //     res.sendFile(Path.join(__dirname, "../views/editteams.handlebars"))
 // });
 
-//   router.get("/teamchallenge", (req, res) => {
-//     res.sendFile(Path.join(__dirname, "../views/teamchallenge.handlebars"))
-// });
+  
 
 // module.exports = router;
 

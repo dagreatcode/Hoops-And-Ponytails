@@ -16,6 +16,9 @@ module.exports = function(sequelize, DataTypes) {
       }, 
       season_points: {
           type: DataTypes.DECIMAL(10,2)
+      },
+      player_height: {
+          type: DataTypes.DECIMAL(10,2)
       }
     });
   
