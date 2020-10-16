@@ -36,22 +36,51 @@
 </form>
 <!--CODE FOR SEARCH ENGINE-->
 
-<script>
-  
-  $("#searchplayers").on("submit",function (event){
-    event.preventDefault();
-    console.log("clicked")
-    
-   var name = $("#player-name").val()
 
-    $.ajax({
-      url: "http://api.sportradar.us/wnba/trial/v7/en/league/hierarchy.xml?api_key=226774v99bae546n3skmrm3a"
-       
-    }).then(function (res){
-      console.log(res)
-    })
-    
-  })
+
+<!--SCRIPT AREA FOR NOW-->
+
+<script type="text/javascript">
+
+  $(".delplayer").on("click", function(event) {
+    var id = $(this).data("playerid");
+
+    // Send the DELETE request.
+    $.ajax("/api/editplayers/" + id, {
+      type: "DELETE"
+    }).then(
+      function() {
+        console.log("deleted id ", id);
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  });
+
+
+  $("#updateteams").on("submit", function(event) {
+    // Make sure to preventDefault on a submit event.
+    event.preventDefault();
+
+    var id = $("[name=id]").val().trim();
+
+    var updatedTeam = {
+      team: $("#updateteam [name=team]").val().trim()
+    };
+
+    // Send the PUT request.
+    $.ajax("/api/editplayers/" + id, {
+      type: "PUT",
+      data: updatedTeam
+    }).then(
+      function() {
+        console.log("updated id ", id);
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  });
+  
 </script>
 
 

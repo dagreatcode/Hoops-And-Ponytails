@@ -3,13 +3,9 @@ const  axios  = require("axios");
 const express = require("express");
 const router = express.Router();
 const db = require("../models");
+const apiURL = "http://api.sportradar.us/wnba/trial/v7/en/players/03e541cb-d11c-4975-b656-f6e7febcda7d/profile.json?api_key="
+const apiKey = "226774v99bae546n3skmrm3a"
 
-// model for user
-// model for player
-// model for team
-// db.User.findAll({})
-// db.Team.findAll({})
-// db.Player.findAll({})
 
 
 
@@ -103,8 +99,6 @@ axios.get(
 
 
 module.exports = function(app) {
-
-
 
 // //======================================================================================
 //     // GET route for getting all of the users
@@ -248,4 +242,8 @@ module.exports = function(app) {
         res.json(dbPlayerPut);
       });
   });
+
+//Third Party API Calls//======================================================================================
+
+
 }
