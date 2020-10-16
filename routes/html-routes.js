@@ -23,16 +23,14 @@ module.export = function(app){
           userId: req.user_id
         }
       }).then((teams)=> {
-        res.render("teams", {teams: teams} )
-
-        
-      })
-    //get teams by userid 
-    //
-    // res.render("team");
-    // res.
-    // res.send("works");
-  })
+        res.render("teamschallenge", {teams: teams} )
+      }).catch((err)=> {
+        console.log("err finding the teams")
+        res.json({
+          error:true,
+        });
+      });
+  });
 };
 
   // 
