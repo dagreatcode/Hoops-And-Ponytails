@@ -154,34 +154,5 @@ module.exports = function(app) {
 
 //Third Party API Calls//======================================================================================
 
-function blah() {
-    axios.get(apiURL + apiKey)
-    .then((res) => {
-        db.hoops.create({
-            // pinpoint what information I want to get.
-            
-        })
-    })
-}
-// GET specific players
-// router.get("/api/player/:player_id", function(req, res) {
-//     axios({
-//         method: "get",
-//         url: 
-//     });
-//     })
-//       .then(function(apiPlayerSingle) {
-//         res.json(apiPlayerSingle);
-//       });
 
-// // GET all players
-// router.get("/api/player/", function(req, res) {
-//     axios({
-//         method: "get",
-//         url: apiURL + apiKey
-//     });
-//     })
-//       .then(function(apiPlayerGet) {
-//         res.json(apiPlayerGet);
-//       });
 }
