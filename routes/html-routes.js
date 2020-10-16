@@ -25,7 +25,4 @@ module.exports = function(app){
   app.get("/buildyourteam", (req, res) => {
     res.render("buildyourteam")
   });
-
-
-
 };
