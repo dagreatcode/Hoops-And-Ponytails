@@ -4,32 +4,53 @@
 
 <h3> Build Your Team</h3>
 
-{{!-- <form action="/user" method="post"></form> --}}
-<div class="search-results-box">
-    <label>Search</label>
-    <input type="search" name="search" />
-</div>
-<form class="build-your-team-form"></form>
-    <div class="grid-container">
-        <div class="row align-justify">
-            <div class="col-sm-4">
-                <div class="columns medium-4">Search Results</div>
+
+<div class="grid-container">
+  <div class="grid-x grid-margin-x small-up-2 medium-up-3">
+    <div class="cell">
+      <div class="card">
+        <img src="assets/img/generic/rectangle-1.jpg">
+        <div class="card-section">
+        <h4>This is a row of cards.</h4>
+          <p>This row of cards is embedded in an X-Y Block Grid.</p>
+        </div>
+      </div>
+    </div>
+    <div class="cell">
+      <div class="card">
+        <img src="assets/img/generic/rectangle-1.jpg">
+        <div class="card-section">
+            <!-- Top Center -->
+            <button class="button" type="button" data-toggle="example-dropdown-top-center">Toggle Dropdown</button>
+            <div class="dropdown-pane" data-position="top" data-alignment="center" id="example-dropdown-top-center" data-dropdown data-auto-focus="true">
+            <!-- My dropdown content in here -->
             </div>
-            <div class="col-sm-4">
-                <button class="columns medium-2" type="add">ADD</button>
-                <button class="columns medium-2" type="delete">Trash</button>
-            </div>
-            <div class="col-sm-4">
-                <div class="teambox">
-                    <div class="columns medium-4">Team</div>
-                </div>
-            </div>
-            <div>
-                <button type="save">SAVE</button>
+            <!-- Bottom Center -->
+            <button class="button" type="button" data-toggle="example-dropdown-bottom-center">Toggle Dropdown</button>
+            <div class="dropdown-pane" data-position="bottom" data-alignment="center" id="example-dropdown-bottom-center" data-dropdown data-auto-focus="true">
+            <!-- My dropdown content in here -->
             </div>
         </div>
+      </div>
     </div>
-</form>
+    <div class="cell">
+      <div class="card">
+        <img src="assets/img/generic/rectangle-1.jpg">
+        <div class="card-section">
+          <h4>This is a card.</h4>
+          <p>It has an easy to override visual style, and is appropriately subdued.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Bottom Center -->
+    <button class="button" type="button" data-toggle="example-dropdown-bottom-center">Toggle Dropdown</button>
+    <div class="dropdown-pane" data-position="bottom" data-alignment="center" id="example-dropdown-bottom-center" data-dropdown data-auto-focus="true">
+    <!-- My dropdown content in here -->
+    </div>
+  </div>
+</div>
+
+
 
 {{!-- <script type="text/javascript">
     $(".delete").on("click", function(event) {
