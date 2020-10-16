@@ -1,4 +1,5 @@
   
+const  axios  = require("axios");
 const express = require("express");
 const router = express.Router();
 const db = require("../models");
@@ -9,6 +10,97 @@ const db = require("../models");
 // db.User.findAll({})
 // db.Team.findAll({})
 // db.Player.findAll({})
+
+
+
+axios.get(
+   "http://api.sportradar.us/wnba/trial/v7/en/league/hierarchy.json?api_key=226774v99bae546n3skmrm3a"
+   
+).then(function (res){
+  // console.log(res.data)
+  var teams = [];
+
+  var conferences = res.data.conferences
+  for(var i= 0; i< conferences.length; i++){
+    for(var t=0; t<conferences[i].teams.length; t++ ){
+      teams.push({teamId:conferences[i].teams[t].id, teamName: conferences[i].teams[t].name})
+    }
+  }
+  return teams
+}).then(function(teams){
+  // console.log(teams)
+  var index = 0;
+  var players = [];
+  function getData(){
+    var url = "http://api.sportradar.us/wnba/trial/v7/en/teams/" + teams[index].teamId + "/profile.json?api_key=226774v99bae546n3skmrm3a" ;
+      axios.get(url).then(function (res){
+        var teamRoster = res.data.players;
+        for(var p=0; p< teamRoster.length; p++ ){
+          players.push({playerId: teamRoster[p].id, playerName: teamRoster[p].full_name, jerseyNumber: teamRoster[p].jersey_number,position: teamRoster[p].position, exp:teamRoster[p].experience  })
+        };
+        return players
+    }).then(function(players){
+      setTimeout( ()=>{
+        index++;
+       if(index < teams.length-1) {
+         console.log("true")
+        getData();
+       }else {
+        console.log(players);
+        res.send(players);
+        console.log("false")
+       }
+      },1000)
+      
+    }).catch((err)=>{
+      if (err) {
+        console.log(err);
+        console.log("error in players call")
+      };
+    });
+  }
+  getData();
+});
+
+  // axios.get("http://api.sportradar.us/wnba/trial/v7/en/teams/0699edf3-5993-4182-b9b4-ec935cbd4fcc/profile.json?api_key=226774v99bae546n3skmrm3a"
+  // ).then(function(res){
+  //   console.log(res.data.players)
+  // // var teamRoster = res.data.players;
+  //   //   for(var p=0; p< teamRoster.length; p++ ){
+  //   //     players.push({teamId: teams[r].teamId, teamName: teams[r].teamName, playerId: teamRoster[p].id, playerName: teamRoster[p].full_name, jerseyNumber: teamRoster[p].jersey_number,position: teamRoster[p].position, exp:teamRoster[p].experience  })
+  //   //   };
+  //     // return players
+  // }).catch((err)=>{
+  //   if (err) {
+  //     console.log("error in players call")
+  //   };
+  // });
+//   for (var r = 0; r< teams.length; r++){
+
+//     var url = "http://api.sportradar.us/wnba/trial/v7/en/teams/" + teams[r].teamId + "/profile.json?api_key=226774v99bae546n3skmrm3a" ;
+//     axios.get(url).then(function (res){
+//       var teamRoster = res.data.players;
+//       for(var p=0; p< teamRoster.length; p++ ){
+//         players.push({teamId: teams[r].teamId, teamName: teams[r].teamName, playerId: teamRoster[p].id, playerName: teamRoster[p].full_name, jerseyNumber: teamRoster[p].jersey_number,position: teamRoster[p].position, exp:teamRoster[p].experience  })
+//       };
+//       return players
+//     }).then(function(players){
+//       console.log(players);
+//     }).catch((err)=>{
+//       if (err) {
+//         console.log("error in players call")
+//       };
+//     });
+//   }
+// }).catch ((err)=> {
+//   if(err){ 
+//     console.log("error is overall get ")
+//   };
+// });
+
+
+
+
 
 module.exports = function(app) {
 

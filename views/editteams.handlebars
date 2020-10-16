@@ -45,11 +45,7 @@
    var name = $("#player-name").val()
 
     $.ajax({
-      url: "http://api.sportradar.us/wnba/trial/v7/en/league/hierarchy.xml?api_key=226774v99bae546n3skmrm3a",
-      method:"GET"
-      headers: {
-        
-      }
+      url: "http://api.sportradar.us/wnba/trial/v7/en/league/hierarchy.xml?api_key=226774v99bae546n3skmrm3a"
        
     }).then(function (res){
       console.log(res)
