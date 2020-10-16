@@ -38,18 +38,41 @@
 </div>
 
 <script> 
+$(document).ready(function (){
+
+
   var resultsDiv = $(".challenge-results");
+  var resultsCard = $('<div>');
+  var cardDivider = $("<div>");
+  var cardSection = $("<div>");
 
   $(".challenge-form").on("submit", function (event) {
     event.preventDefault();
     console.log("clicked");
+    
+    createResultsCard();
+  });
 
-    resultsDiv.append("<h3>"+ "Worked" + "</h3>");
-  //create tag 
-  
+  function createResultsCard(){
+
+    resultsDiv.html("");
+    //create tag 
+ 
+  // attributes
+    $(resultsDiv).attr("style", "margin: auto, width: 50%,padding: 10px")
+    $(resultsCard).attr("class", "card");
+    $(cardDivider).attr("class","card-divider");
+    $(cardSection).attr("class", "card-section");
+
   //text for tag 
+    $(cardDivider).text("Winner: Team Name ");
+    $(cardSection).text("Breakdown of stats winning");
+
+     
   //append tag 
+    $(resultsDiv).append(resultsCard,cardDivider,cardSection);
 
+  };
 
-  })
+});
 </script>
