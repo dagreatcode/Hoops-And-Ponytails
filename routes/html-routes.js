@@ -2,18 +2,34 @@ const express = require("express");
 // const router = express.Router();
 const db = require("../models");
 const path = require("path");
+const { sequelize, Team } = require("../models");
 const app = express();
+
 
 // VIEWS ROUTES
 module.exports = function(app){
   app.get("/", (req, res) => {
-    res.render("index")
+    
+    res.redirect("index")
   });
-  app.get("/editteams", (req,res)=> {
-    res.render("");
-  })
-  app.get("/teamchallenge", (req, res) => {
-    res.render("teamchallenge")
+
+  app.get("/teamchallenge", (req,res)=> {
+      // res.render("teamchallenge",{
+      //   testing:"example text"
+      // })
+
+      Team.findAll({
+        where: {
+          userId: req.user_id
+        }
+      }).then((teams)=> {
+        res.render("teamschallenge", {teams: teams} )
+      }).catch((err)=> {
+        console.log("err finding the teams")
+        res.json({
+          error:true,
+        });
+      });
   });
   app.get("/index", (req, res) => {
     res.render("index")
@@ -26,3 +42,5 @@ module.exports = function(app){
     res.render("buildyourteam")
   });
 };
+
+
