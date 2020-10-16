@@ -4,60 +4,54 @@
 
 <h3> Build Your Team</h3>
 
-<form id="searchTeam" class="button-size">
-  <input type="text" name="id" placeholder="id">
-	<textarea type="text" name="search" placeholder="Which team would you like to search?"></textarea>
-	<button type="submit">Search</button>
-</form>
-<div class="grid-container">
-  <div class="grid-x grid-margin-x small-up-2 medium-up-3">
-    <div id="select-team" class="cell">
-        <label>Select Multiple Teams
-        <select 12 Teams>
-            <option value="team1">Dream</option>
-            <option value="team2">Sky</option>
-            <option value="team3">Sun</option>
-            <option value="team4">Fever</option>
-            <option value="team5">Liberty</option>
-            <option value="team6">Mystics</option>
-            <option value="team7">Wings</option>
-            <option value="team8">Aces</option>
-            <option value="team9">Sparks</option>
-            <option value="team10">Lynx</option>
-            <option value="team11">Mercury</option>
-            <option value="team12">Storm</option>
+        <form id="searchTeam" class="button-size"></form>
+        <input type="text" name="id" placeholder="search">
+        </form>
+        <div class="grid-container">
+            <div class="grid-x grid-margin-x small-up-2 medium-up-3">
+                <div id="select-team" class="cell">
+                    <label>Select Multiple Teams
+                    <select 12 Teams>
+                        <option value="team1">Dream</option>
+                        <option value="team2">Sky</option>
+                        <option value="team3">Sun</option>
+                        <option value="team4">Fever</option>
+                        <option value="team5">Liberty</option>
+                        <option value="team6">Mystics</option>
+                        <option value="team7">Wings</option>
+                        <option value="team8">Aces</option>
+                        <option value="team9">Sparks</option>
+                        <option value="team10">Lynx</option>
+                        <option value="team11">Mercury</option>
+                        <option value="team12">Storm</option>
 
-        </select>
-        </label>
-    </div>
-    <div class="cell">
-      <div class="card">
-        <div class="card-section">
-            <!-- Top Center -->
-            <button class="button" type="button" data-toggle="example-dropdown-top-center">Add</button>
-            </div>
-            <!-- Bottom Center -->
-            <button class="button" type="button" data-toggle="example-dropdown-bottom-center">Delete</button>
-            </div>
+                    </select>
+                    </label>
+                </div>
+                <div class="cell">
+                    <div class="card-section">
+                        <!-- Top Center -->
+                        <div>
+                        <button class="button" type="button" data-toggle="example-dropdown-top-center">Add</button>
+                        </div>
+                        <!-- Bottom Center -->
+                        <div>
+                        <button class="button" type="button" data-toggle="example-dropdown-bottom-center">Delete</button>
+                        </div>
+                    </div>
+                </div>
+                <ul class = "selected-team">
+                  <label> Team 1  
+                    <select>
+                    {{#each team}}
+                        <option >{{team.teams}}</option>
+                      {{/each}} 
+                    </select>
+                  </label> 
+                  <input for='selected-team' type="submit" value="Save">
+                </ul>
+            </div> 
         </div>
-      </div>
-    </div>
-    <ul class = "selected-team">
-    {{#each team}}
-        <li>
-            <p>
-                {{this.id}}. {{this.team}}
-
-                <button data-teamid="{{this.id}}" class="delteam">Delete</button>
-            </p>
-        </li>
-    {{/each}}
-    </ul>
-    <!-- Bottom Center -->
-    <button class="button" type="button" data-toggle="example-dropdown-bottom-center">Save</button>
-    </div>
-  </div>
-</div>
 
 
 {{!-- 
