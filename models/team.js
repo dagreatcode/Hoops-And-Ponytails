@@ -4,17 +4,8 @@ module.exports = function(sequelize, DataTypes) {
         team_name: {
             type: DataTypes.STRING
         }, 
-        player_number: {
-            type: DataTypes.INTEGER
-        }, 
-        api_player_id: {
-            type: DataTypes.STRING
-        }, 
-        player_id:{
-            type: DataTypes.INTEGER
-        }, 
         user_id: {
-            type: DataTypes.INTEGER
+            type: DataTypes.STRING
         } 
     });
 

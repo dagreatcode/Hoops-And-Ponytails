@@ -4,32 +4,58 @@
 
 <h3> Build Your Team</h3>
 
-{{!-- <form action="/user" method="post"></form> --}}
-<div class="search-results-box">
-    <label>Search</label>
-    <input type="search" name="search" />
-</div>
-<form class="build-your-team-form"></form>
-    <div class="grid-container">
-        <div class="row align-justify">
-            <div class="col-sm-4">
-                <div class="columns medium-4">Search Results</div>
+<form id="searchTeam" class="button-size">
+  <input type="text" name="id" placeholder="id">
+	<textarea type="text" name="search" placeholder="Which team would you like to search?"></textarea>
+	<button type="submit">Search</button>
+</form>
+<div class="grid-container">
+  <div class="grid-x grid-margin-x small-up-2 medium-up-3">
+    <div class="cell">
+        <label>Select Multiple Teams
+        <select Teams>
+            <option value="showboat">Showboat</option>
+            <option value="redwing">Redwing</option>
+            <option value="narcho">Narcho</option>
+            <option value="hardball">Hardball</option>
+            <option value="showboat">Showboat</option>
+            <option value="redwing">Redwing</option>
+            <option value="narcho">Narcho</option>
+            <option value="hardball">Hardball</option>
+        </select>
+        </label>
+    </div>
+    <div class="cell">
+      <div class="card">
+        <img src="assets/img/generic/rectangle-1.jpg">
+        <div class="card-section">
+            <!-- Top Center -->
+            <button class="button" type="button" data-toggle="example-dropdown-top-center">Add</button>
             </div>
-            <div class="col-sm-4">
-                <button class="columns medium-2" type="add">ADD</button>
-                <button class="columns medium-2" type="delete">Trash</button>
-            </div>
-            <div class="col-sm-4">
-                <div class="teambox">
-                    <div class="columns medium-4">Team</div>
-                </div>
-            </div>
-            <div>
-                <button type="save">SAVE</button>
+            <!-- Bottom Center -->
+            <button class="button" type="button" data-toggle="example-dropdown-bottom-center">Delete</button>
             </div>
         </div>
+      </div>
     </div>
-</form>
+    <div class="cell">
+        <label>Your Team
+        <select Only Five5>
+            <option value="showboat">Showboat</option>
+            <option value="redwing">Redwing</option>
+            <option value="narcho">Narcho</option>
+            <option value="hardball">Hardball</option>
+            <option value="hardball">Hardball</option>
+        </select>
+        </label>
+    </div>
+    <!-- Bottom Center -->
+    <button class="button" type="button" data-toggle="example-dropdown-bottom-center">Save</button>
+    </div>
+  </div>
+</div>
+
+
 
 {{!-- <script type="text/javascript">
     $(".delete").on("click", function(event) {
