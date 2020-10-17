@@ -1,7 +1,6 @@
-<div> 
+<div class="top-bar" id="responsive-menu"> 
   {{>navbar/nav}}
 </div>
-
 
 <h2>Edit Teams</h2>
 
@@ -20,7 +19,7 @@
 
             <tr>
                 <th>{{playerName}}</th>
-                <th><button data-apiId="{{playerId}}"id="delplayer" type="button">Delete</button></th>
+                <th><button data-apiId="{{playerId}}" class= "button" id="delplayer" data-toggle="example-dropdown-bottom-center" type="button">Delete</button></th>
             </tr>
                 
             {{/each}}
@@ -33,7 +32,7 @@
 
   <h3>Update Your Teams{{this.id}}</h3>
   
-      <button id="updateteams" type="submit" data-toggle="example-dropdown-bottom-center">Update Team!</button>
+      <button class="button" id="updateteams" type="submit" data-toggle="example-dropdown-bottom-center">Update Team!</button>
 
 
 

@@ -1,6 +1,4 @@
-<div class = "container">
-
-<div> 
+<div class="top-bar" id="responsive-menu"> 
   {{>navbar/nav}}
 </div>
 
@@ -14,8 +12,13 @@
 </div>
 {{/if}}
 
-<div class="cell">
-    <div class="col-lg-10">
+
+<div class="grid-container">
+        <div class="grid-x grid-padding-x">
+          <div class="medium-4 cell">
+         <div class="cell">
+    <div class="col-sm-6">
+
     <form class = "login">
     <form action="/user" type="text" method="post">
       <div class = "form-group">
@@ -23,7 +26,9 @@
           <input type="text" class ="form-control" id="username-input" placeholder ="Username">
       </div>
         
-      <button type="submit">Log In</button>
+
+      <button class="button" type="submit" data-toggle="example-dropdown-bottom-center">Log In</button>
+
     </form>
     </form>
     </div>
