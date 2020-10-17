@@ -13,15 +13,15 @@ module.exports = function (app) {
 
     //create a player 
     //POST route to create a player 
-    app.post("/api/player/", function (req,res){
-        db.Player.create(req.body).then(function(createPlayer){
+    app.post("/api/player", function (req,res){
+        db.Player.create([req.body]).then(function(createPlayer){
             res.json(createPlayer)
         })
     })
 
 
    // GET route for getting all of the players
-   app.get("/api/player/", function (req, res) {
+   app.get("/api/players", function (req, res) {
     db.Player.findAll()
       .then(function (dbPlayerGet) {
         res.json(dbPlayerGet);
