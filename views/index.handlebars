@@ -1,6 +1,4 @@
-<div class = "container">
-
-<div> 
+<div class="top-bar" id="responsive-menu"> 
   {{>navbar/nav}}
 </div>
 
@@ -14,17 +12,24 @@
 </div>
 {{/if}}
 
-<form class = "login">
-<form action="/user" method="post">
-  <div class = "form-group">
-      <label for = "userNameInput">Username:</label>
-      <input type="text" class ="form-control" id="username-input" placeholder ="Username">
-  </div>
-    
-  <button type="submit">Log In</button>
-</form>
-</form>
-<br>
+<div class="grid-container">
+        <div class="grid-x grid-padding-x">
+          <div class="medium-4 cell">
+         <div class="cell">
+    <div class="col-sm-6">
+    <form class = "login">
+    <form action="/user" type="text" method="post">
+      <div class = "form-group">
+          <label for = "userNameInput">Username:</label>
+          <input type="text" class ="form-control" id="username-input" placeholder ="Username">
+      </div>
+        
+      <button class="button" type="submit" data-toggle="example-dropdown-bottom-center">Log In</button>
+    </form>
+    </form>
+    </div>
+    </div>
+    <br>
 
 <!--ADDED LINK TO SIGN UP PAGE-->
     <p>Don't have an account? Sign up <a href="./signup.handlebars">here</a></p>
