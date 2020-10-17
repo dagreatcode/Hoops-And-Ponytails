@@ -1,10 +1,15 @@
-<div class="top-bar" id="responsive-menu"> 
+<div > 
   {{>navbar/nav}}
 </div>
 
 
-<div class = "row">
-  <h2>Log In</h2>
+<div class="grid-container">
+    <div class="grid-x grid-padding-x">
+      <div class="medium-7 cell">
+        <h2>Log In</h2>
+      </div>
+    </div>
+</div>
     
 {{#if message}}
 <div class="error">
@@ -16,14 +21,9 @@
 <form class = "login">
   <div class="grid-container">
     <div class="grid-x grid-padding-x">
-      <div class="medium-6 cell">
-        <label>Input Label
-          <input type="text" placeholder=".medium-6.cell">
-        </label>
-      </div>
-      <div class="medium-6 cell">
-        <label>Input Label
-          <input type="text" placeholder=".medium-6.cell">
+      <div class="medium-7 cell">
+        <label>Username:
+          <input type="text" id="username-input" placeholder ="Username">
         </label>
       </div>
     </div>
@@ -34,7 +34,7 @@
 <form action="/user" method="post">
   <div class = "form-group">
       <label for = "userNameInput">Username:</label>
-      <input type="text" class ="form-control" id="username-input" placeholder ="Username">
+      <input type="text" class ="form-control" >
   </div>
     
   <button type="submit">Log In</button>
@@ -43,8 +43,12 @@
 <br>
 
 <!--ADDED LINK TO SIGN UP PAGE-->
+  <div class="grid-container">
+    <div class="grid-x grid-padding-x">
+      <div class="medium-7 cell">
     <p>Don't have an account? Sign up <a href="./signup.handlebars">here</a></p>
 
+</div>
 </div>
 </div>
 
@@ -65,13 +69,8 @@
 
 
   
-<<<<<<< HEAD
-
-{{!-- function userLogin(username) {
-=======
 {{!-- 
 function userLogin(username) {
->>>>>>> 86f1631d2bf950fe3301f766d7f94a687e0e1e34
   $.post("/api/login", {
     username: username,
   }).then(function() {
@@ -79,13 +78,8 @@ function userLogin(username) {
   }).catch(function(err) {
     console.log(err);
   });
-<<<<<<< HEAD
-};
-//write get call to check if username is in db 
-=======
 }; --}}
 {{!-- write get call to check if username is in db 
->>>>>>> 86f1631d2bf950fe3301f766d7f94a687e0e1e34
 //post call to change loggin boolean to true  --}}
 </script>
 
