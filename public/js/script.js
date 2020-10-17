@@ -1,9 +1,22 @@
 const express = require('express');
-const request = require('request');
+const axios = require('axios');
 const app = express();
 
 const apiURL = "http://api.sportradar.us/wnba/trial/v7/en/players/03e541cb-d11c-4975-b656-f6e7febcda7d/profile.json?api_key="
 const apiKey = "226774v99bae546n3skmrm3a"
+
+
+app.post
+axios({
+    method: 'get',
+    url: apiURL + apiKey
+  })
+    .then(function (response) {
+      response.data.pipe(fs.createWriteStream('ada_lovelace.jpg'))
+    });
+
+
+
 
 app.get('/_getproduct/:id', function(req, res) {
     if (!req.params.id) {
