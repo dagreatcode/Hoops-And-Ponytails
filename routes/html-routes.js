@@ -10,6 +10,10 @@ const axios = require('axios')
 module.exports = function(app){
   app.get("/", (req, res) => {
     
+    // if (!userData.username) {
+    //   return;
+    // }
+  
     res.redirect("index")
   });
 
@@ -106,6 +110,9 @@ module.exports = function(app){
   });
   app.get("/editteams", (req,res) => {
     res.render("editteams")
+  });
+  app.get("/yourteam", (req,res) => {
+    res.render("yourteam")
   });
 };
 
