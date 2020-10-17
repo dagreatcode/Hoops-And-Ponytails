@@ -6,10 +6,19 @@ const db = require("../models");
 
 module.exports = function (app) {
 
-    //create a player 
-    //read all players 
+    
+   
     //read player by id 
     //delete player by id 
+
+    //create a player 
+    //POST route to create a player 
+    app.post("/api/player/:id", function (req,res){
+        db.Player.create(req.body).then(function(playerPost){
+            res.json(playerPost)
+        })
+    })
+
 
    // GET route for getting all of the players
    app.get("/api/player/", function (req, res) {
@@ -20,7 +29,7 @@ module.exports = function (app) {
   });
 
   // Get route for retrieving a single player
-  app.get("/api/player/:player_id", function (req, res) {
+  app.get("/api/player/:id", function (req, res) {
     db.Player.findOne({
         where: {
           id: req.params.player_id
@@ -32,7 +41,7 @@ module.exports = function (app) {
   });
 
       // DELETE route for deleting players
-      app.delete("/api/player/:player_id", function (req, res) {
+      app.delete("/api/player/:id", function (req, res) {
         db.Player.destroy({
             where: {
               id: req.params.player_id
@@ -43,17 +52,17 @@ module.exports = function (app) {
           });
       });
 
-       // PUT route for updating players
-    app.put("/api/player", function (req, res) {
-        db.Player.update(req.body, {
-            where: {
-              id: req.body.player_id
-            }
-          })
-          .then(function (dbPlayerPut) {
-            res.json(dbPlayerPut);
-          });
-      });
+    //    // PUT route for updating players
+    // app.put("/api/player", function (req, res) {
+    //     db.Player.update(req.body, {
+    //         where: {
+    //           id: req.body.player_id
+    //         }
+    //       })
+    //       .then(function (dbPlayerPut) {
+    //         res.json(dbPlayerPut);
+    //       });
+    //   });
 
 
 };
