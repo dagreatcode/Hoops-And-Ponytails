@@ -12,11 +12,11 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.TEXT
       }, 
       jersey_number: {
-          type: DataTypes.INTERGER,
+          type: DataTypes.INTEGER,
           allowNull: true
       }, 
       season_points: {
-          type: DataTypes.INTERGER,
+          type: DataTypes.DECIMAL(10,2),
           allowNull: true
       }
     });
