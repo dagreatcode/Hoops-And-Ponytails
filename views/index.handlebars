@@ -23,12 +23,7 @@ loginpage
       <label for = "userNameInput">Username:</label>
       <input type="text" class ="form-control" id="username-input" placeholder ="Username">
   </div>
-
-  <div class = "form-group">
-      <label for = "emailInput">Email:</label>
-      <input type="email" class ="form-control" id="email-input" placeholder ="Email">
-  </div>
-  
+    
   <button type="submit">Log In</button>
 </form>
 </form>
@@ -62,30 +57,26 @@ loginpage
 
 <!--CODE IS HERE FOR NOW-->
 <script>
-//var logInForm = $("form.login");
-//var usernameInput = $("input#username-input");
-//var emailInput = $("input#email-input");
+var logInForm = $("form.login");
+var usernameInput = $("input#username-input");
 
 loginForm.on("submit", function(event) {
   event.preventDefault();
   var userData = {
     username: usernameInput.val().trim(),
-    email: emailInput.val().trim()
   };
 
-  if (!userData.username || !userData.email) {
+  if (!userData.username) {
     return;
   }
 
-  userLogin(userData.username, userData.email);
+  userLogin(userData.username);
   usernameInput.val("");
-  emailInput.val("");
 });
 
-function userLogin(username, email) {
+function userLogin(username) {
   $.post("/api/login", {
     username: username,
-    email: email
   }).then(function() {
     window.location.replace("/yourteams");
   }).catch(function(err) {
