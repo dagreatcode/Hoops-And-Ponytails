@@ -14,7 +14,25 @@
 </div>
 {{/if}}
 
+
 <form class = "login">
+  <div class="grid-container">
+    <div class="grid-x grid-padding-x">
+      <div class="medium-6 cell">
+        <label>Input Label
+          <input type="text" placeholder=".medium-6.cell">
+        </label>
+      </div>
+      <div class="medium-6 cell">
+        <label>Input Label
+          <input type="text" placeholder=".medium-6.cell">
+        </label>
+      </div>
+    </div>
+  </div>
+</form>
+
+{{!-- <form >
 <form action="/user" method="post">
   <div class = "form-group">
       <label for = "userNameInput">Username:</label>
@@ -23,7 +41,7 @@
     
   <button type="submit">Log In</button>
 </form>
-</form>
+</form> --}}
 <br>
 
 <!--ADDED LINK TO SIGN UP PAGE-->
@@ -50,7 +68,7 @@
 
   
 
-function userLogin(username) {
+{{!-- function userLogin(username) {
   $.post("/api/login", {
     username: username,
   }).then(function() {
@@ -60,7 +78,7 @@ function userLogin(username) {
   });
 };
 //write get call to check if username is in db 
-//post call to change loggin boolean to true 
+//post call to change loggin boolean to true  --}}
 </script>
 
 
