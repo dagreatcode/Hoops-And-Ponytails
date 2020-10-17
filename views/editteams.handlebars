@@ -6,29 +6,34 @@
 <h2>Edit Teams</h2>
 
 <!--lIST OF PLAYERS, DELETE BUTTON IS LOCATED NEXT TO EACH PLAYER-->
-<div class="container">
-<table class = "player_list">
-  {{#each player}}
-    <tr>
-        <p>
-            {{this.id}}. {{this.player}}
+ <div class="grid-container">
+      <div class="grid-x grid-margin-x small-up-2 medium-up-3">
+         <div id="edit-team">
+         <table class = "player_list">
+    
+            <tr>
+                <th> Name </th>
+                <th> Remove from Team </th>
+            </tr>
 
-            <button data-playerid="{{this.id}}" class="delplayer">Delete</button>
-        </p>
-    </tr>
-  {{/each}}
-</table>
-</div>
+            {{#each players}}
+
+            <tr>
+                <th>{{playerName}}</th>
+                <th><button data-apiId="{{playerId}}"id="delplayer" type="button">Delete</button></th>
+            </tr>
+                
+            {{/each}}
+        </table>
+  </div>
+  </div>
+  </div>
 
 <!--SAVE CHANGES MADE TO YOUR TEAMS-->
 
-<h2>Update Your Teams{{this.id}}</h2>
-<div class="container">
-<form id="updateteams" class="button-size">
-  <input type="text" name="id" placeholder="id">
-	<textarea type="text" name="team" placeholder="Which team would you like to edit?"></textarea>
-	<button type="submit">Update Team!</button>
-</form>
+  <h3>Update Your Teams{{this.id}}</h3>
+  
+      <button id="updateteams" type="submit" data-toggle="example-dropdown-bottom-center">Update Team!</button>
 
 
 
