@@ -38,6 +38,29 @@
 
 
 
+
+  {{!-- if (!userData.username) {
+    return;
+  } --}}
+  
+
+
    
 
+
   
+
+function userLogin(username) {
+  $.post("/api/login", {
+    username: username,
+  }).then(function() {
+    window.location.replace("/home");
+  }).catch(function(err) {
+    console.log(err);
+  });
+};
+//write get call to check if username is in db 
+//post call to change loggin boolean to true 
+</script>
+
+

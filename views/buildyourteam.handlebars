@@ -4,18 +4,21 @@
 
 <h3> Build Your Team</h3>
 
-        <form id="searchTeam" class="button-size"></form>
-        <input type="text" name="id" placeholder="search">
-        </form>
+        {{!-- <form id="searchTeam" class="button-size" method="post" action="/players">
+          <input type="text" name="player_name" placeholder="search">
+          <button> search</button>
+        </form> --}}
         <div class="grid-container">
             <div class="grid-x grid-margin-x small-up-2 medium-up-3">
                 <div id="select-team" class="cell">
                     <label> Results 
-                        <select>
-                        {{#each team}}
-                            <option >{{team.teams}}</option>
-                          {{/each}} 
-                        </select>
+                      <ul>
+                        <li>
+                          {{#each players }}
+                            {{playerName}}
+                          {{/each}}
+                        </li>
+                      </ul>
                       </label> 
                 </div>
                 <div class="cell">
@@ -59,3 +62,10 @@
         );
     });
 </script> --}}
+
+
+<!-- 
+  add functionality db PUT call to create a team 
+  store team_name and user_id 
+  get db call to receive user_id 
+  -->
