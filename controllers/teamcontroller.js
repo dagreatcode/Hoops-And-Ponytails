@@ -7,6 +7,13 @@ const db = require("../models");
 
 module.exports = function (app) {
 
+  // POST route to create a team 
+  app.post("/api/team/", function (req,res){
+    db.Team.create(req.body).then(function(createTeam){
+      res.json(createTeam)
+    })
+  })
+
     // GET route for getting all of the teams
     app.get("/api/team/", function (req, res) {
         db.Team.findAll()
@@ -56,4 +63,4 @@ module.exports = function (app) {
       });
   
 
-}
+};
