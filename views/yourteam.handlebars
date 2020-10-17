@@ -1,95 +1,68 @@
-<div> 
+<div class="top-bar" id="responsive-menu">
   {{>navbar/nav}}
 </div>
 
-<h3>View Your Team</h3>
-<form class="view-form">
 <div class="grid-container">
-  <div class="grid-x grid-margin-x small-up-2 medium-up-3">
+  <!-- sub header-->
+  <div class="grid-x">
+    <header class="cell">
+      <h3 class="subheader ">View Your Team</h3>
+    </header>
+  </div>
+
+    <!-- select a team drop down cell-->
+  <div class="grid-x">
     <div class="cell">
+      <form class="view-form">
         <label>Select a team to view
-            <select>
-                {{#each team}}
-                    <option >{{team.teams}}</option>
-                  {{/each}} 
-            </select>
+          <select>
+            {{#each team}}
+            <option id = "name">{{team.teams}}</option>
+            {{/each}}
+          </select>
         </label>
+        <button class="button" type="submit" data-toggle="example-dropdown-bottom-center">Select</button>
+      </form>
     </div>
+    <!-- results cell-->
     <div class="cell">
-      <div class="card">
-        
-        <div class="card-section">
-            
-            </div>
-            <!-- Bottom Center -->
-            <button class="button" type="submit" data-toggle="example-dropdown-bottom-center">Select</button>
-            </div>
-        </div>
-      </div>
-    </div>
-</form>
-    <div class="cell">
-        <label>Your Team
-            <div class="view-results" > 
-            </div>
-
-            
-                <script> 
-                    $(document).ready(function (){
-                    
-                    
-                      var resultsDiv = $(".view-results");
-                      var resultsCard = $('<div>');
-                      var cardDivider = $("<div>");
-                      var cardSection = $("<div>");
-                    
-                      $(".view-form").on("submit", function (event) {
-                        event.preventDefault();
-                        console.log("clicked");
-                        
-                        createResultsCard();
-                        viewTeams(); 
-                      });
-                       
-                      //compare teams function 
-                      function viewTeams(){
-                    
-                        $.get("/players",{
-                          full_name: full_name,
-                          points: points, 
-                          
-                        })
-                      }
-                       //create the results card 
-                      function createResultsCard(){
-                    
-                        resultsDiv.html("");
-                        //create tag 
-                     
-                      // attributes
-                        $(resultsDiv).attr("style", "margin: auto, width: 50%,padding: 10px")
-                        $(resultsCard).attr("class", "card");
-                        $(cardDivider).attr("class","card-divider");
-                        $(cardSection).attr("class", "card-section");
-                    
-                      //text for tag 
-                        $(cardDivider).text(" Team Name ");
-                        $(cardSection).text("Breakdown of stats");
-                      //append tag 
-                        $(resultsDiv).append(resultsCard,cardDivider,cardSection);
-                    
-                      };
-                    
-                    });
-                    </script>
-        </label>
+      <div class="view-results"></div>
     </div>
 
+  </div>
 
-    <!-- 
+</div>
+
+
+<script>
+  $(document).ready(function () {
+
+
+    var resultsDiv = $(".view-results");
+    var resultsCard = $('<div>');
+    var cardDivider = $("<div>");
+    var cardSection = $("<div>");
+
+    $(".view-form").on("submit", function (event) {
+      event.preventDefault();
+      console.log("clicked");
+      var createdTeamName = $(this).data("team")
+      $.ajax("/api/team", {
+        type: "GET", 
+        user: createdTeamName
+      } )
+      
+    });
+
+  });
+</script>
+
+
+
+
+<!-- 
       get call to DB receive all of the teams for this username to populate the dropdown bar 
       get call to api to receive player info: player name number and average point to populate the view results div 
       add edit team button to results 
       on click function for when edit team button clicked redirect to edit teams page
       -->
-     
