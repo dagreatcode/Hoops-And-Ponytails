@@ -42,7 +42,10 @@ module.exports = function(app){
   app.get("/signup", (req, res) => {
     res.render("signup")
   });
+
+  //build your team 
   app.get("/buildyourteam", (req, res) => {
+    //api call to recieve list of player 
     axios.get(
         "http://api.sportradar.us/wnba/trial/v7/en/league/hierarchy.json?api_key=226774v99bae546n3skmrm3a"
 
@@ -87,6 +90,7 @@ module.exports = function(app){
                 getData();
               } else {
                 console.log("false")
+                console.log(players)
                 res.render("buildyourteam",{
                   players: players
                 })

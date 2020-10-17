@@ -8,42 +8,37 @@
           <input type="text" name="player_name" placeholder="search">
           <button> search</button>
         </form> --}}
-        <div class="grid-container">
-            <div class="grid-x grid-margin-x small-up-2 medium-up-3">
-                <div id="select-team" class="cell">
-                    <label> Results 
-                      <ul>
-                        <li>
-                          {{#each players }}
-                            {{playerName}}
-                          {{/each}}
-                        </li>
-                      </ul>
-                      </label> 
-                </div>
-                <div class="cell">
-                    <div class="card-section">
-                        <!-- Top Center -->
-                        <div>
-                        <button class="button" type="button" data-toggle="example-dropdown-top-center">Add</button>
-                        </div>
-                        <!-- Bottom Center -->
-                        <div>
-                        <button class="button" type="button" data-toggle="example-dropdown-bottom-center">Delete</button>
-                        </div>
-                    </div>
-                </div>
-                <ul class = "selected-team">
-                  <label> Your Teams 
-                    <select>
-                    {{#each team}}
-                        <option >{{team.teams}}</option>
-                      {{/each}} 
-                    </select>
-                  </label> 
-                  <input for='selected-team' type="submit" value="Save">
-                </ul>
-            </div> 
+<div class="grid-container">
+  <div class="grid-x grid-margin-x small-up-2 medium-up-3">
+    <div id="select-team" class="cell">
+      <table> 
+        <caption> Players Availabe</caption>
+          <tr>
+            <th> Name </th>
+            <th> Number </th>
+            <th> Position </th>
+            <th> Experince </th>
+            <th> Add to Team </th>
+          </tr>
+          {{#each players}}
+          <tr>
+
+            <th>{{playerName}}</th>
+            <th>{{jerseyNumber}}</th>
+            <th>{{position}}</th>
+            <th>{{exp}}</th>
+            <th><button id="addBtn"type="button" data-toggle="example-dropdown-top-center" data-apiId ="{{playerId}}">Add</button></th>
+          </tr>
+          {{/each}}
+      </table>
+
+    </div>
+
+    <button id="saveBtn"type="button" data-toggle="example-dropdown-top-center"></button>
+    <div class="cell">
+      <div class="card-section">
+            
+  
         </div>
 
 
