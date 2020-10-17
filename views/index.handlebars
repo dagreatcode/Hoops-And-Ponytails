@@ -46,9 +46,10 @@ loginForm.on("submit", function(event) {
     username: usernameInput.val().trim(),
   };
 
-  if (!userData.username) {
+  {{!-- if (!userData.username) {
     return;
-  }
+  } --}}
+  
 
   userLogin(userData.username);
   usernameInput.val("");
@@ -58,9 +59,13 @@ function userLogin(username) {
   $.post("/api/login", {
     username: username,
   }).then(function() {
-    window.location.replace("/yourteams");
+    window.location.replace("/home");
   }).catch(function(err) {
     console.log(err);
   });
 };
+//write get call to check if username is in db 
+//post call to change loggin boolean to true 
 </script>
+
+
