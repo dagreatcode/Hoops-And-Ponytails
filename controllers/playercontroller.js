@@ -13,9 +13,9 @@ module.exports = function (app) {
 
     //create a player 
     //POST route to create a player 
-    app.post("/api/player/:id", function (req,res){
-        db.Player.create(req.body).then(function(playerPost){
-            res.json(playerPost)
+    app.post("/api/player/", function (req,res){
+        db.Player.create(req.body).then(function(createPlayer){
+            res.json(createPlayer)
         })
     })
 
