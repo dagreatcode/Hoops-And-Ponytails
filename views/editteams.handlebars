@@ -7,21 +7,21 @@
 
 <!--lIST OF PLAYERS, DELETE BUTTON IS LOCATED NEXT TO EACH PLAYER-->
 
-<ul class = "player_list">
+<table class = "player_list">
   {{#each player}}
-    <li>
+    <tr>
         <p>
             {{this.id}}. {{this.player}}
 
             <button data-playerid="{{this.id}}" class="delplayer">Delete</button>
         </p>
-    </li>
+    </tr>
   {{/each}}
-</ul>
+</table>
 
 <!--SAVE CHANGES MADE TO YOUR TEAMS-->
 
-<h2>Update Your Teams with an id of {{this.id}}</h2>
+<h2>Update Your Teams{{this.id}}</h2>
 <form id="updateteams" class="button-size">
   <input type="text" name="id" placeholder="id">
 	<textarea type="text" name="team" placeholder="Which team would you like to edit?"></textarea>
@@ -29,16 +29,10 @@
 </form>
 
 
-<form id= "searchplayers" class= "button-size">
-  <input id="player-name" type="text" placeholder="Search">
-  <textarea type="text" name="player" placeholder="Search player"></textarea>
-  <button type="submit">Search</button>
-</form>
-<!--CODE FOR SEARCH ENGINE-->
 
 
 
-<!--SCRIPT AREA FOR NOW-->
+
 
 <script type="text/javascript">
 
@@ -83,6 +77,7 @@
   
 </script>
 
+<script src="../public/js/editteams.js" type="text/javascript"></script>
 
 
 
