@@ -1,40 +1,15 @@
-const express = require('express');
-const axios = require('axios');
-const app = express();
-
-const apiURL = "http://api.sportradar.us/wnba/trial/v7/en/players/03e541cb-d11c-4975-b656-f6e7febcda7d/profile.json?api_key="
-const apiKey = "226774v99bae546n3skmrm3a"
-
-
-app.post
-axios({
-    method: 'get',
-    url: apiURL + apiKey
-  })
-    .then(function (response) {
-      response.data.pipe(fs.createWriteStream('ada_lovelace.jpg'))
-    });
-
-
-
-
-app.get('/_getproduct/:id', function(req, res) {
-    if (!req.params.id) {
-        res.status(500);
-        res.send({"Error": "Looks like you are not sending a valid request"});
-        console.log("Looks like you are not sending a valid request");
-    }
-   request.get({ url: apiURL + apiKey },      function(error, response, body) {
-           if (!error && response.statusCode == 200) {
-               res.json(body);
-              }
-          });
+const animate = anime({
+  targets: 'img.basketball',
+  keyframes: [
+      {translateY: -250},
+      {translateX: 475},
+      {translateY: 100},
+      {translateX: 0},
+      {translateY: 0}
+    ],
+    duration: 5000,
+    easing: 'cubicBezier(.5, .05, .1, .3)',
+    loop: true
   });
 
-
-// $.ajax({
-//     url: "http://api.sportradar.us/wnba/trial/v7/en/players/03e541cb-d11c-4975-b656-f6e7febcda7d/profile.json?api_key=226774v99bae546n3skmrm3a",
-//     method: "GET"
-// }).then(function(response) {
-//     console.log(response);
-// });
+  return animate;
