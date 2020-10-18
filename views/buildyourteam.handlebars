@@ -12,15 +12,17 @@
   <div class="grid-x grid-margin-x small-up-2 medium-up-3">
     <div id="select-team" class="cell">
       <form>
-        <label>Multiple Select Menu
-          <select multiple>
-            {{#each players}}
-            <option id= "playerName" data-pName= "{{playerName}}">{{playerName}}</option>
+        <label>Select Menu
+          <select>
+            {{#each players }}
+            <option id= "playerName">{{name}}</option>
             {{/each}}
           </select>
         </label>
-        <button id="addBtn" type="button" data-toggle="example-dropdown-top-center"
-          data-apiId="{{playerId}}">Add</button>
+
+  
+        {{!-- <button id="addBtn" type="button" data-toggle="example-dropdown-top-center"
+          data-apiId="{{playerId}}">Add</button> --}}
       </form>
     </div>
     <div class="cell">
@@ -37,6 +39,8 @@
     </div>
   </div>
 </div>
+
+
 
 
 
