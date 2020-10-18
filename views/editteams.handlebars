@@ -1,8 +1,12 @@
-<div class="top-bar" id="responsive-menu"> 
+<div > 
   {{>navbar/nav}}
 </div>
 
-<h2>Edit Teams</h2>
+<div class='backgroundWrapper'>
+<div class="grid-container">
+    <div class="grid-x grid-padding-x">
+      <div class="medium-7 cell">
+    <h2>Edit Teams</h2>
 
 <!--lIST OF PLAYERS, DELETE BUTTON IS LOCATED NEXT TO EACH PLAYER-->
  <div class="grid-container">
@@ -40,89 +44,68 @@
 
 
 
+<!--<script src="./js/editTeams.js" type="text/javascript"></script>-->
+
 <script type="text/javascript">
 
 $(document).ready(function (){
 
-  $(".delplayer").on("submit", function(event) {
+  var playerDiv = $(".player-list");
+  var id = $(this).data("playerid");
+
+  $("#delplayer").on("click", function(event) {
       event.preventDefault();
       console.log("clicked");
-
       deletePlayer();
 
   });
 
-      //var id = $(this).data("playerid");
-
-    //{{!-- // Send the DELETE request.
-    //$.ajax("/api/editplayers/" + id, {
-      //type: "DELETE"
-   // }).then(
-     // function() {
-        //console.log("deleted id ", id);
-        // Reload the page to get the updated list
-       // location.reload();
-     // }
-    //); --}}
-
-  function deletePlayer(){
-    $.delete("/player/" + id, {
-        id: id,
-    })
-  }
+  //function deletePlayer(event) {
+  //$.ajax("/api/player/:player_id", {
+     // type: "DELETE",
+      //data: player
+     // }).then(function() {
+        //console.log("deleted id", id);
+        //location.reload();
+    // });
+ // }
 
 
- 
-
-
-  $("#updateteams").on("submit", function(event) {
+  $("#updateteams").on("click", function(event) {
     event.preventDefault();
     console.log("clicked");
 
-    //var id = $("[name=id]").val().trim();
-
-    //var updatedTeam = {
-      //team: $("#updateteam [name=team]").val().trim()
-    //};
-    updateTeam();
+    
+    //updateTeam;
   });
 
   function updateTeam() {
-    $.put("/player/" + id, {
-      id: id,
-    })
-  }
-
-
-
-    //$.ajax("/api/editplayers/" + id, {
-      //type: "PUT",
-      //data: updatedTeam
-    //}).then(
-      //function() {
-        //console.log("updated id ", id);
-        // Reload the page to get the updated list
-        //location.reload();
-      //}
-    //);
+    $.ajax("/api/player/:" + playerid, {
+      type: "PUT",
+      data: updatedTeam
+    }).then(function(){
+        console.log("updated id", id);
+        location.reload();
+    });
+  };
   
-})  
+});  
 </script>
 
-<script src="../public/js/editteams.js" type="text/javascript"></script>
+<!--<script src="../public/js/editteams.js" type="text/javascript"></script>-->
 
 
 
 
 
-<!-- 
-  db get call using teamid to get player names 
-  table of player names with remove buttons 
-  remove button functionality 
-  db delete call to delete player from db
+
+  //db get call using teamid to get player names 
+  //table of player names with remove buttons 
+  //remove button functionality 
+  //db delete call to delete player from db
 
 
-  replace search with table of availabe players with add buttons copy from buildteam
-  add button functionality 
-  db create player 
+  //replace search with table of availabe players with add buttons copy from buildteam
+  //add button functionality 
+  //db create player  
   
