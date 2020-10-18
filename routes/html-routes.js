@@ -121,11 +121,6 @@ module.exports = function(app){
   });
   
   app.get("/home", (req,res) => {
-    if (userName === true) {
-      res.render("yourteam")
-    } else {
-      res.render("buildyourteam")
-    }
     res.render("home")
   });
 };
