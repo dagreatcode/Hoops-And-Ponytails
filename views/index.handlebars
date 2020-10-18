@@ -54,7 +54,7 @@
   <div class="grid-container">
     <div class="grid-x grid-padding-x">
       <div class="medium-7 cell">
-    <p>Don't have an account? Sign up <a href="./signup.handlebars">here</a></p>
+    <p>Don't have an account? Sign up <a href="/signup">here</a></p>
 
 </div>
 </div>
@@ -99,10 +99,11 @@ $(document).ready(function() {
        data: username
     }).then(function(){
 
-         if(username === true) {
+         if(!username ) {
+           alert("Please sign up")
            //validUser();
-          window.location("/homepage")
-         }else {alert("Please sign up");
+         }else {
+           window.location.replace("/home");
         };   
     })
   };
