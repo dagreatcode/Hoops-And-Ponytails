@@ -1,29 +1,34 @@
 <div> 
   {{>navbar/nav}}
 </div>
-
-<h3> Team Challenge</h3>
+<div class="grid-container">
+    <div class="grid-x grid-padding-x">
+      <div class="medium-8 cell">
+        <h3> Team Challenge</h3>
+      </div>
+    </div>
+</div>
 
 <form class="challenge-form">
   <div class="grid-container">
     <div class="grid-x grid-padding-x">
       <div class="medium-4 cell">
-        <label> Team 1  
+        {{!-- <label> Team 1   --}}
           <select>
           {{#each team}}
               <option >{{team.teams}}</option>
             {{/each}} 
           </select>
-        </label>  
+        {{!-- </label>   --}}
       </div>
       <div class="medium-4 cell">
-        <label>Select Team
+        {{!-- <label>Select Team  --}}
           <select>
             {{#each team}}
               <option >{{team.teams}}</option>
             {{/each}} 
           </select>
-        </label>  
+        {{!-- </label>   --}}
       </div>
       <div class ='medium-4 cell'> 
         <input for='challengeSubmit' type="submit" value="Challenge">

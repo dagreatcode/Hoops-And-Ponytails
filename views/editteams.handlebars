@@ -1,8 +1,13 @@
-<div class="top-bar" id="responsive-menu"> 
-  {{>navbar/nav}}
-</div>
 
-<h2>Edit Teams</h2>
+  {{>navbar/nav}}
+
+<div class="grid-container">
+    <div class="grid-x grid-padding-x">
+      <div class="medium-8 cell">
+        <h2>Edit Teams</h2>
+      </div>
+    </div>
+</div>
 
 <!--lIST OF PLAYERS, DELETE BUTTON IS LOCATED NEXT TO EACH PLAYER-->
  <div class="grid-container">
@@ -19,7 +24,7 @@
 
             <tr>
                 <th>{{playerName}}</th>
-                <th><button data-apiId="{{playerId}}" class= "button" id="delplayer" data-toggle="example-dropdown-bottom-center" type="button">Delete</button></th>
+                <th><button data-apiId="{{playerId}}" class= "alert button" id="delplayer" data-toggle="example-dropdown-bottom-center" type="button">Delete</button></th>
             </tr>
                 
             {{/each}}
@@ -29,10 +34,22 @@
   </div>
 
 <!--SAVE CHANGES MADE TO YOUR TEAMS-->
-
-  <h3>Update Your Teams{{this.id}}</h3>
+<div class="grid-container">
+    <div class="grid-x grid-padding-x">
+      <div class="medium-8 cell">
+        <h3>Update Your Teams{{this.id}}</h3>
+      </div>
+    </div>
+</div>
   
-      <button class="button" id="updateteams" type="submit" data-toggle="example-dropdown-bottom-center">Update Team!</button>
+  <div class="grid-container">
+    <div class="grid-x grid-padding-x">
+      <div class="medium-8 cell">
+        <button class="button" id="updateteams" type="submit" data-toggle="example-dropdown-bottom-center">Update Team!</button>
+      </div>
+    </div>
+</div>
+      
 
 
 
