@@ -1,12 +1,12 @@
-<div class="top-bar" id="responsive-menu">
+{{!-- <div class="top-bar" id="responsive-menu"> --}}
   {{>navbar/nav}}
-</div>
+{{!-- </div> --}}
 
 <div class="grid-container">
   <!-- sub header-->
   <div class="grid-x">
     <header class="cell">
-      <h3 class="subheader ">View Your Team</h3>
+      <h3 class="subheader" style="color: orangered">View Your Team</h3>
     </header>
   </div>
 
@@ -14,14 +14,14 @@
   <div class="grid-x">
     <div class="cell">
       <form class="view-form">
-        <label>Select a team to view
+        {{!-- <label>Select a team to view --}}
           <select>
             {{#each team}}
             <option id = "name">{{team.teams}}</option>
             {{/each}}
           </select>
-        </label>
-        <button class="button" type="submit" data-toggle="example-dropdown-bottom-center">Select</button>
+        {{!-- </label> --}}
+        <button class=" alert button" type="submit" data-toggle="example-dropdown-bottom-center" >Select</button>
       </form>
     </div>
     <!-- results cell-->
