@@ -1,14 +1,14 @@
 {
   "development": {
     "username": "root",
-    "password": "Andrew0502",
+    "password": "Aiden624!",
     "database": "hoops_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "Andrew0502",
+    "password": "Aiden624!",
     "database": "hoops_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
