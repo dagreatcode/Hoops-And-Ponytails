@@ -22,19 +22,23 @@ module.exports = function (app) {
   });
 
   // Get route for retrieving a single user
-  app.get("/api/user/:user_id", function (req, res) {
-    db.User.findOne({
+  app.get("/api/user/", function (req, res) {
+    db.User.findAll({
       where: {
-        id: req.params.user_id
+        username: req.params.username
       }
     })
     .then(function (dbUserSingle) {
       res.json(dbUserSingle);
+    })
+    .catch((err) =>{
+      console.log(err)
+      console.log("error inside of getUser function");
     });
   });
 
   // DELETE route for deleting users
-  app.delete("/api/user/:user_id", function (req, res) {
+  app.delete("/api/user/:user_name", function (req, res) {
     db.User.destroy({
       where: {
         id: req.params.user_id

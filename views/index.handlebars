@@ -17,6 +17,8 @@
 </div>
 {{/if}}
 
+{{#each user}}
+{{/each}}
 
 <form class = "login">
   <div class="grid-container">
@@ -28,7 +30,7 @@
       </div>
         
 
-      <button class="button" id="loginBtn" type="submit" data-toggle="example-dropdown-bottom-center">Log In</button>
+      <button class="button" id="loginBtn"  type="submit" data-toggle="example-dropdown-bottom-center">Log In</button>
 
     </form>
     </form>
@@ -52,7 +54,7 @@
   <div class="grid-container">
     <div class="grid-x grid-padding-x">
       <div class="medium-7 cell">
-    <p>Don't have an account? Sign up <a href="./signup.handlebars">here</a></p>
+    <p>Don't have an account? Sign up <a href="/signup">here</a></p>
 
 </div>
 </div>
@@ -73,13 +75,6 @@
 </div>-->
 
 
-            <form class="login">
-              <form action="/user" type="text" method="post">
-                <div class="form-group">
-                  <label for="userNameInput">Username:</label>
-                  <input type="text" class="form-control" id="username-input" placeholder="Username">
-                </div>
-
 
 <script type="text/javascript">
   
@@ -90,22 +85,49 @@ $(document).ready(function() {
 
   $("#loginBtn").on("click", function (event) {
       event.preventDefault();
+      //var newlogin = $(this).data("loggedin");
+      //var newloggedinState = {loggedin:newlogin}; 
+     
       console.log("clicked");
 
-      userLogin();
+      userLogin(userNameInput);
   });
 
   function userLogin(username) {
-    $.ajax("/api/user/:user_id", {
+    $.ajax("/api/user/", {
        type: 'GET',
        data: username
-        }).then(function(){
-            console.log('success');
-            location.reload();
-        });
-   
-  }; 
+    }).then(function(){
 
+         if(!username ) {
+           alert("Please sign up")
+           //validUser();
+         }else {
+           window.location.replace("/home");
+        };   
+    })
+  };
+
+
+      
+  
+
+  
+
+
+  function validUser(username) {
+    $.ajax("/api/user/:user_id", {
+        type: 'PUT',
+        data: newloggedinState
+        }).then(function() {
+            console.log("successfully logged in");
+        
+        }).then(function() {
+            window.location.href = "/home";
+        });
+  };
+
+  
 });
 
  
