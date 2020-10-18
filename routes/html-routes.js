@@ -83,22 +83,15 @@ module.exports = function(app){
             };
             return players
           }).then(function (players) {
-            setTimeout(() => {
-              index++;
-              if (index < teams.length - 1) {
-                console.log("true")
-                getData();
-              } else {
-                console.log("false")
-                console.log(players)
-                res.render("buildyourteam",{
-                  players: players
-                })
-                // console.log(players);
-                // res.send(players);
-                // console.log("false")
-              }
-            }, 1000)
+            var s = 0;
+            pStats = [];
+            function getStats(){
+              var url = "http://api.sportradar.us/wnba/trial/v7/en/players/" + players[s].playerId + "/profile.json?api_key=226774v99bae546n3skmrm3a";
+              axios.get(url).then(function (res) {
+                var playerStats = res.data.seasons[1]
+              })
+            }
+            
 
           }).catch((err) => {
             if (err) {
@@ -121,3 +114,19 @@ module.exports = function(app){
 };
 
 
+// setTimeout(() => {
+//   index++;
+//   if (index < teams.length - 1) {
+//     console.log("true")
+//     getData();
+//   } else {
+//     console.log("false")
+//     console.log(players)
+//     res.render("buildyourteam",{
+//       players: players
+//     })
+//     // console.log(players);
+//     // res.send(players);
+//     // console.log("false")
+//   }
+// }, 1000)

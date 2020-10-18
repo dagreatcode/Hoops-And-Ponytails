@@ -52,20 +52,33 @@
 </div>
 </div>
 
-<!--CODE IS HERE FOR NOW-->
+  {{#if message}}
+  <div class="error">
+    <span style="color: red">{{message}}</span>
+  </div>
+  {{/if}}
 
 <script src="./js/index.js" type="text/javascript"></script>
 </div>
 
+            <form class="login">
+              <form action="/user" type="text" method="post">
+                <div class="form-group">
+                  <label for="userNameInput">Username:</label>
+                  <input type="text" class="form-control" id="username-input" placeholder="Username">
+                </div>
 
 
-  {{!-- if (!userData.username) {
-    return;
-  } --}}
-  
+                <button class="button" id="loginBtn" type="submit" data-toggle="example-dropdown-bottom-center">Log
+                  In</button>
 
    
 
+      </div>
+    </div>
+  </div>  
+</div>
+    <!--CODE IS HERE FOR NOW-->
 
   
 {{!-- 
