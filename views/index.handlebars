@@ -17,6 +17,8 @@
 </div>
 {{/if}}
 
+{{#each user}}
+{{/each}}
 
 <form class = "login">
   <div class="grid-container">
@@ -28,7 +30,7 @@
       </div>
         
 
-      <button class="button" id="loginBtn" data-loggedin="{{loggedin}}" type="submit" data-toggle="example-dropdown-bottom-center">Log In</button>
+      <button class="button" id="loginBtn"  type="submit" data-toggle="example-dropdown-bottom-center">Log In</button>
 
     </form>
     </form>
@@ -83,46 +85,45 @@ $(document).ready(function() {
 
   $("#loginBtn").on("click", function (event) {
       event.preventDefault();
-      var newlogin = $(this).data("loggedin");
-      var newloggedinState = {loggedin:newlogin};
+      //var newlogin = $(this).data("loggedin");
+      //var newloggedinState = {loggedin:newlogin}; 
      
       console.log("clicked");
 
-      userLogin();
+      userLogin(userNameInput);
   });
 
   function userLogin(username) {
-    $.ajax("/api/user/:user_id", {
+    $.ajax("/api/user/", {
        type: 'GET',
        data: username
-        }).then(function(){
+    }).then(function(){
 
          if(username === true) {
-           validUser();
+           //validUser();
           window.location("/homepage")
-          )else alert(Please sign up);
-      }   
-            
-        });
+         }else {alert("Please sign up");
+        };   
+    })
+  };
 
 
       
-  }; 
+  
 
   
-}
+
 
   function validUser(username) {
     $.ajax("/api/user/:user_id", {
         type: 'PUT',
-        data: newloggedinState,
-        complete: 
-      }).then(function(){
-        console.log("successfully logged in");
+        data: newloggedinState
+        }).then(function() {
+            console.log("successfully logged in");
         
-      }).then(function() {
-        window.location.href = "/home";
-      });
+        }).then(function() {
+            window.location.href = "/home";
+        });
   };
 
   
