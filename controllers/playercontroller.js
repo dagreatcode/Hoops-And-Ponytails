@@ -52,17 +52,17 @@ module.exports = function (app) {
           });
       });
 
-    //    // PUT route for updating players
-    // app.put("/api/player", function (req, res) {
-    //     db.Player.update(req.body, {
-    //         where: {
-    //           id: req.body.player_id
-    //         }
-    //       })
-    //       .then(function (dbPlayerPut) {
-    //         res.json(dbPlayerPut);
-    //       });
-    //   });
+       // PUT route for updating players
+    app.put("/api/player/playerid", function (req, res) {
+        db.Player.update(req.body, {
+            where: {
+              id: req.body.player_id
+            }
+          })
+          .then(function (dbPlayerPut) {
+            res.json(dbPlayerPut);
+          });
+      });
 
 
 };

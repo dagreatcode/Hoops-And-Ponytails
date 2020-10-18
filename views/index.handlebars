@@ -26,6 +26,12 @@
           <input type="text" id="username-input" placeholder ="Username">
         {{!-- </label> --}}
       </div>
+        
+
+      <button class="button" id="loginBtn" type="submit" data-toggle="example-dropdown-bottom-center">Log In</button>
+
+    </form>
+    </form>
     </div>
   </div>
 </form>
@@ -58,8 +64,10 @@
   </div>
   {{/if}}
 
-<script src="./js/index.js" type="text/javascript"></script>
-</div>
+
+<!--<script src="./js/index.js" type="text/javascript"></script>
+</div>-->
+
 
             <form class="login">
               <form action="/user" type="text" method="post">
@@ -74,23 +82,41 @@
 
    
 
-      </div>
-    </div>
-  </div>  
-</div>
-    <!--CODE IS HERE FOR NOW-->
-
+<script type="text/javascript">
   
-{{!-- 
-function userLogin(username) {
-  $.post("/api/login", {
-    username: username,
-  }).then(function() {
-    window.location.replace("/home");
-  }).catch(function(err) {
-    console.log(err);
+$(document).ready(function() {  
+
+  var logInForm = $("form.login");
+  var userNameInput = $("input#username-input");
+
+  $("#loginBtn").on("click", function (event) {
+      event.preventDefault();
+      console.log("clicked");
+
+      userLogin();
   });
-}; --}}
-{{!-- write get call to check if username is in db 
-//post call to change login boolean to true  --}}
+
+  function userLogin(username) {
+    $.ajax("/api/user/:user_id", {
+       type: 'GET',
+       data: username
+        }).then(function(){
+            console.log('success');
+            location.reload();
+        });
+   
+  }; 
+
+});
+
+ 
+
+//write get call to check if username is in db 
+//post call to change loggin boolean to true
 </script>
+
+
+
+
+
+
