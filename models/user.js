@@ -7,15 +7,16 @@ module.exports = function (sequelize, DataTypes) {
         loggedin: {
           type: DataTypes.BOOLEAN,
           defaultValue: false,
-        }  
+        }, 
+    
 
-      });
+      }, {
+        timestamps: false
+      }
+      );
 
       User.associate = function (models) {
-        User.belongsToMany(models.Team, {
-          through: "team",
-          foreignKey: "user_id",
-        });
+        User.hasMany(models.Team);
       };
       return User;
   };
