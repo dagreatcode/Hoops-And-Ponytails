@@ -3,7 +3,8 @@ const express = require("express");
 const db = require("../models");
 const path = require("path");
 const { sequelize, Team } = require("../models");
-const axios = require('axios')
+const axios = require('axios');
+const Connection = require("mysql2/typings/mysql/lib/Connection");
 
 
 // VIEWS ROUTES
@@ -40,18 +41,20 @@ module.exports = function(app){
   });
 
   // //build your team 
-  app.get("/buildyourteam", (req, res) => {
-        db.PlayerList.findAll()
-        .then(function (data){
-          var players = {
-            name: data
-          };
-          console.log(players);
-          res.render("buildyourteam", players)
-        }).catch ((err)=> {
-          console.log(err)
-        });
-  });
+  // app.get("/buildyourteam", (req, res) => {
+
+  //   var dbQuery = "SELECT name FROM playerList";
+  //   connection.createQuery()
+
+  //       // db.PlayerList.findAll()
+  //       // .then(function (data){
+         
+  //       //   console.log(data);
+  //       //   res.render("buildyourteam")
+  //       // }).catch ((err)=> {
+  //       //   console.log(err)
+  //       // });
+  // });
 
  
   app.get("/editteams", (req,res) => {
