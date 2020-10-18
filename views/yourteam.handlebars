@@ -49,10 +49,13 @@
       event.preventDefault();
       console.log("clicked");
       var createdTeamName = $(this).data("team")
-      $.ajax("/api/team", {
+      $.ajax("/api/team/", {
         type: "GET", 
         user: createdTeamName
-      } )
+      }).then(function(){
+        console.log("here's your team");
+        location.reload();
+      });
       
     });
 

@@ -119,6 +119,10 @@ module.exports = function(app){
   app.get("/yourteam", (req,res) => {
     res.render("yourteam")
   });
+  
+  app.get("/home", (req,res) => {
+    res.render("home")
+  });
 };
 
 
