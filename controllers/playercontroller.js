@@ -28,6 +28,19 @@ module.exports = function (app) {
       });
   });
 
+//get route retrieve players with matching team id 
+app.get ("/api/teamPlayers",function (req,res){
+  db.Player.findAll({
+    where: {
+      id: req.params.team_id
+    }
+  })
+  .then(function (teamPlayers){
+    res.json(teamPlayers);
+  })
+});
+
+
   // Get route for retrieving a single player
   app.get("/api/player/:id", function (req, res) {
     db.Player.findOne({

@@ -45,7 +45,21 @@ module.exports = function(app){
 
   // //build your team 
   app.get("/buildyourteam", (req, res) => {
-    res.render("buildyourteam")
+        db.PlayerList.findAll()
+        .then(function (data){
+          var players = {
+            name: data
+          };
+          console.log(players);
+          res.render("buildyourteam", players)
+        }).catch ((err)=> {
+          console.log(err)
+        });
+  });
+
+
+
+
   //   //api call to recieve list of player 
   //   // axios.get(
   //   //     "http://api.sportradar.us/wnba/trial/v7/en/league/hierarchy.json?api_key=226774v99bae546n3skmrm3a"
@@ -112,13 +126,33 @@ module.exports = function(app){
         
   //     });
     
-  });
+ 
   app.get("/editteams", (req,res) => {
     res.render("editteams")
   });
   app.get("/yourteam", (req,res) => {
     res.render("yourteam")
   });
+  
+  app.get("/home", (req,res) => {
+    res.render("home")
+  });
 };
 
 
+// setTimeout(() => {
+//   index++;
+//   if (index < teams.length - 1) {
+//     console.log("true")
+//     getData();
+//   } else {
+//     console.log("false")
+//     console.log(players)
+//     res.render("buildyourteam",{
+//       players: players
+//     })
+//     // console.log(players);
+//     // res.send(players);
+//     // console.log("false")
+//   }
+// }, 1000)

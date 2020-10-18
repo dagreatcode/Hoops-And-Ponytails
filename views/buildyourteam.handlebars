@@ -1,157 +1,129 @@
-<div> 
+<div>
   {{>navbar/nav}}
 </div>
 
 <h3> Build Your Team</h3>
 
-        {{!-- <form id="searchTeam" class="button-size" method="post" action="/players">
+{{!-- <form id="searchTeam" class="button-size" method="post" action="/players">
           <input type="text" name="player_name" placeholder="search">
           <button> search</button>
         </form> --}}
 <div class="grid-container">
   <div class="grid-x grid-margin-x small-up-2 medium-up-3">
     <div id="select-team" class="cell">
-      <form> 
-        <label>Multiple Select Menu
-          <select multiple>
-            {{#each players}}
-            <option id= "playerName" >{{playerName}}</option>
+      <form>
+        <label>Select Menu
+          <select>
+            {{#each players }}
+            <option id= "playerName">{{name}}</option>
             {{/each}}
           </select>
         </label>
-        <button id="addBtn"type="button" data-toggle="example-dropdown-top-center" data-apiId ="{{playerId}}">Add</button>
-      </form>
-    </div>
-    <div class= "cell">
-      <table> 
-        <caption> Players Availabe</caption>
-          <tr>
-            <th> Name </th>
-            <th> Number </th>
-            <th> Position </th>
-            <th> Experince </th>
-            <th> Average Points </th>
-            <th> Rebounds </th>
-            <th> Assists </th>
-            <th> Steals </th>
-            <th> Blocks </th>
+
   
-          </tr>
-          
-          <tr>
-            {{!-- <th>{{playerName}}</th>
-            <th id ="jersey">{{jerseyNumber}}</th>
-            <th id = "position">{{position}}</th>
-            <th id = "exp">{{exp}}</th> --}}
-            {{!-- <th id ="pts"> points</th>
-            <th id ="pts"> rebounds</th>
-            assists 
-            steals 
-            blocks  --}}
-          </tr>
-      </table>
-       <div id ="results"></div>
-      <form> 
-        <label for="tName"> Team Name:</label>
-        <input type= "text" name="tName">
-        <button id="saveBtn"type="button" data-toggle="example-dropdown-top-center">Save</button>
+        {{!-- <button id="addBtn" type="button" data-toggle="example-dropdown-top-center"
+          data-apiId="{{playerId}}">Add</button> --}}
       </form>
     </div>
-
-    
     <div class="cell">
-     
+
+
+      <div id="results"></div>
+
+
+      <form>
+        <label for="tName"> Team Name:</label>
+        <input type="text" name="tName">
+        <button id="saveBtn" type="button" data-toggle="example-dropdown-top-center">Save</button>
+      </form>
     </div>
+  </div>
+</div>
 
 
 
-{{!-- <script type="text/javascript">
-    $(".delete").on("click", function(event) {
-        let id = $(this).data("teambox");
 
-        $.ajax("/api/ /" + id, {
+
+  {{!-- <script type="text/javascript">
+    $(".delete").on("click", function (event) {
+      let id = $(this).data("teambox");
+
+      $.ajax("/api/ /" + id, {
         type: "DELETE"
-        }).then(
-            function() {
-            console.log("deleted id ", id);
-            location.reload();
-            }
-        );
+      }).then(
+        function () {
+          console.log("deleted id ", id);
+          location.reload();
+        }
+      );
     });
-</script> --}}
+  </script> --}}
 
 
-<!-- 
+  <!-- 
   add functionality db PUT call to create a team 
   store team_name and user_id 
   get db call to receive user_id 
   -->
 
   <script>
-$(document).ready(function (){
+    $(document).ready(function () {
 
-    //variables 
+      //variables 
 
-var add = $("#addBtn");
-var save = $("#saveBtn");
-var name = $("#playerName");
-var resultsDiv = $("#results");
-var h4 = $("<h4>");
-
-
-var currentTeam = [];
-var index = 0;
-
-//onclick for add button 
-
-add.on("click", function (event){
-    event.preventDefault(); 
-    console.log("clicked add");
-    var apiId = $(this).data("playerId")
-
-    index++
-   
-    currentTeam.push($("#playerName").val());
-    console.log("currentteam array",currentTeam);
-    console.log("value of name",$("#playerName").val());
-    createTeamList();
+      var add = $("#addBtn");
+      var save = $("#saveBtn");
+      var name = $("#playerName");
+      var resultsDiv = $("#results");
+      var h4 = $("<h4>");
 
 
-    // var newPlayer = {
-    //     api_player_id: apiId,
-    //     player_name: 
+      var currentTeam = [];
+      var index = 0;
 
-    // }
-    // $.ajax("api/player", )
-    
-    //create a player when added 
-    //post create player
-    //api call to 
-    //get player 
-    //add player to card 
-})
+      //onclick for add button 
 
-save.on("click", function (event){
-    event.preventDefault(); 
-    console.log("clicked save");
-    //create a team when save is clicked
-    //post create team
-    // redirect to view team page
-})
+      add.on("click", function (event) {
+        event.preventDefault();
+        console.log("clicked add");
+        var apiId = $(this).data("playerId")
 
-  function createTeamList (){
+        index++
 
-    
-  
-    h4.text({currentTeam[index]});
-    //append tag 
-    $(resultsDiv).append(h4);
+        currentTeam.push($("#playerName").val());
+        console.log("currentteam array", currentTeam);
+        console.log("value of name", $("#playerName").val());
 
 
-  };
+        h4.text(currentTeam);
+        //append tag 
+        $(resultsDiv).append(h4);
 
 
-});
+        // var newPlayer = {
+        //     api_player_id: apiId,
+        //     player_name: 
+
+        // }
+        // $.ajax("api/player", )
+
+        //create a player when added 
+        //post create player
+        //api call to 
+        //get player 
+        //add player to card 
+      })
+
+      save.on("click", function (event) {
+        event.preventDefault();
+        console.log("clicked save");
+        //create a team when save is clicked
+        //post create team
+        // redirect to view team page
+      })
+
+
+    });
 
 
   </script>

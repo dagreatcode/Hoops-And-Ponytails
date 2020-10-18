@@ -1,9 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
     var Player = sequelize.define("Player", {
-        api_player_id: {
-            type: DataTypes.STRING,
-            allowNull: true
-        },
         team_id: {
         type: DataTypes.INTEGER,
         allowNull: true
