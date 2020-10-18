@@ -63,7 +63,7 @@ $(document).ready(function() {
   var logInForm = $("form.login");
   var userNameInput = $("input#username-input");
 
-  $("#loginBtn").on("submit", function (event) {
+  $("#loginBtn").on("click", function (event) {
       event.preventDefault();
       console.log("clicked");
 
@@ -71,21 +71,23 @@ $(document).ready(function() {
   });
 
   function userLogin(username) {
-    $.post("/api/login", {
-      username: username,
-
-    }).then(function() {
-      redirect("/home");
-
-    }).catch(function(err) {
-      console.log(err);
-    });
+    $.ajax("/api/user/:user_id", {
+       type: 'GET',
+       data: username
+        }).then(function(){
+            console.log('success');
+            location.reload();
+        });
+   
   }; 
 
 });
+
+ 
 
 //write get call to check if username is in db 
 //post call to change loggin boolean to true
 </script>
 
 
+        
