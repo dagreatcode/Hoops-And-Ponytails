@@ -14,10 +14,11 @@ const PORT = process.env.PORT || 8080;
 
 //middleware 
 //used to interpert spaces in urls 
+app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 //changing data into json
 app.use(express.json());
-// app.use(express.static("public"));
+
 
 //view engine using handlebar to display our html pages
 app.engine("handlebars", exphbs({ defaultLayout: "main", 
