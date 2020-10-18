@@ -17,6 +17,10 @@ module.exports = function (sequelize, DataTypes) {
         },
         avg_blocks:{
             type: DataTypes.DECIMAL(10,2)
+        }, 
+        on_team: {
+            type: DataTypes.BOOLEAN, 
+            defaultValue: false
         }
       });
 
