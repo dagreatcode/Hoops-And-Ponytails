@@ -5,8 +5,27 @@
   const apiURL = "http://api.sportradar.us/wnba/trial/v7/en/players/03e541cb-d11c-4975-b656-f6e7febcda7d/profile.json?api_key="
   const apiKey = "226774v99bae546n3skmrm3a"
 
+var count = 0;
 
 
+// function getStats(){
+//   count++;
+//   axios.get("http://api.sportradar.us/wnba/trial/v7/en/players/03e541cb-d11c-4975-b656-f6e7febcda7d/profile.xml?api_key=226774v99bae546n3skmrm3a")
+// .then(function (res){
+//   // var playerstats = res.data.seasons[1].teams[1]
+//   console.log(res.data.seasons[3].teams.total);
+//   // console.log("block",playerstats.average.Blocks )
+//   // console.log("steals",playerstats.average.Steals)
+//   // console.log("assists",playerstats.average.Assists)
+//   // console.log("rebounds",playerstats.average.Rebounds)
+//   // console.log("points",playerstats.average.points)
+// }).catch((err)=>{
+//   console.log(err);
+// });
+
+// }
+
+// getStats();
 
 
 
