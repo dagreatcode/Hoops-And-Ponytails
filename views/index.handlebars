@@ -28,7 +28,7 @@
       </div>
         
 
-      <button class="button" id="loginBtn" type="submit" data-toggle="example-dropdown-bottom-center">Log In</button>
+      <button class="button" id="loginBtn" data-loggedin="{{loggedin}}" type="submit" data-toggle="example-dropdown-bottom-center">Log In</button>
 
     </form>
     </form>
@@ -83,6 +83,9 @@ $(document).ready(function() {
 
   $("#loginBtn").on("click", function (event) {
       event.preventDefault();
+      var newlogin = $(this).data("loggedin");
+      var newloggedinState = {loggedin:newlogin};
+     
       console.log("clicked");
 
       userLogin();
@@ -93,12 +96,36 @@ $(document).ready(function() {
        type: 'GET',
        data: username
         }).then(function(){
-            console.log('success');
-            location.reload();
+
+         if(username === true) {
+           validUser();
+          window.location("/homepage")
+          )else alert(Please sign up);
+      }   
+            
         });
-   
+
+
+      
   }; 
 
+  
+}
+
+  function validUser(username) {
+    $.ajax("/api/user/:user_id", {
+        type: 'PUT',
+        data: newloggedinState,
+        complete: 
+      }).then(function(){
+        console.log("successfully logged in");
+        
+      }).then(function() {
+        window.location.href = "/home";
+      });
+  };
+
+  
 });
 
  
