@@ -2,7 +2,14 @@ module.exports = function (sequelize, DataTypes) {
     const User = sequelize.define("User", {
         username: {
           type: DataTypes.STRING,
-        }
+          type: DataTypes.BOOLEAN,
+          defaultValue: false
+        },
+        loggedin: {
+          type: DataTypes.BOOLEAN,
+          defaultValue: false
+        }  
+
       });
 
       User.associate = function (models) {
