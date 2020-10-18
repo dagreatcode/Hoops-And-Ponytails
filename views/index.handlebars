@@ -1,10 +1,15 @@
-<div class="top-bar" id="responsive-menu"> 
+<div > 
   {{>navbar/nav}}
 </div>
 
 
-<div class = "row">
-  <h2>Log In</h2>
+<div class="grid-container">
+    <div class="grid-x grid-padding-x">
+      <div class="medium-7 cell">
+        <h2>Log In</h2>
+      </div>
+    </div>
+</div>
     
 {{#if message}}
 <div class="error">
@@ -13,31 +18,37 @@
 {{/if}}
 
 
-<div class="grid-container">
-        <div class="grid-x grid-padding-x">
-          <div class="medium-4 cell">
-         <div class="cell">
-    <div class="col-sm-6">
-
-    <form class = "login">
-    <form action="/user" type="text" method="post">
-      <div class = "form-group">
-          <label for = "userNameInput">Username:</label>
-          <input type="text" class ="form-control" id="username-input" placeholder ="Username">
+<form class = "login">
+  <div class="grid-container">
+    <div class="grid-x grid-padding-x">
+      <div class="medium-7 cell">
+        <label>Username:
+          <input type="text" id="username-input" placeholder ="Username">
+        </label>
       </div>
-        
-
-      <button class="button" type="submit" data-toggle="example-dropdown-bottom-center">Log In</button>
-
-    </form>
-    </form>
     </div>
-    </div>
-    <br>
+  </div>
+</form>
+
+{{!-- <form >
+<form action="/user" method="post">
+  <div class = "form-group">
+      <label for = "userNameInput">Username:</label>
+      <input type="text" class ="form-control" >
+  </div>
+    
+  <button type="submit">Log In</button>
+</form>
+</form> --}}
+<br>
 
 <!--ADDED LINK TO SIGN UP PAGE-->
+  <div class="grid-container">
+    <div class="grid-x grid-padding-x">
+      <div class="medium-7 cell">
     <p>Don't have an account? Sign up <a href="./signup.handlebars">here</a></p>
 
+</div>
 </div>
 </div>
 
