@@ -3,7 +3,7 @@ $(document).ready(function() {
     var logInForm = $("form.login");
     var usernameInput = $("input#username-input");
   
-    loginForm.on("submit", function(event) {
+    logInForm.on("submit", function(event) {
       event.preventDefault();
       console.log("clicked");
       
