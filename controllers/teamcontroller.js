@@ -34,7 +34,17 @@ module.exports = function (app) {
           });
       });
 
-
+      //get route for retriveing teams with this userid
+      app.get("/api/userTeams", function (req,res) {
+        db.Team.findAll({
+          where: {
+            id: req.params.user_id
+          }
+        })
+        .then(function (userTeams){
+          res.json(userTeams)
+        })
+      });
 
     // DELETE route for deleting teams
     app.delete("/api/team/:team_id", function (req, res) {
