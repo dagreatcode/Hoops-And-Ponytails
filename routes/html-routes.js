@@ -122,3 +122,19 @@ module.exports = function(app){
 };
 
 
+// setTimeout(() => {
+//   index++;
+//   if (index < teams.length - 1) {
+//     console.log("true")
+//     getData();
+//   } else {
+//     console.log("false")
+//     console.log(players)
+//     res.render("buildyourteam",{
+//       players: players
+//     })
+//     // console.log(players);
+//     // res.send(players);
+//     // console.log("false")
+//   }
+// }, 1000)
