@@ -1,0 +1,18 @@
+.backgroundWrapper {
+    background-image: url("../img/back3.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    width: 100%;
+    z-index: 0;
+}
+
+/* #backgroundWrapper {
+    background-image: url('./img/back1.png') no-repeat center center fixed;
+} */
+
+h1{
+    color: red;
+}
