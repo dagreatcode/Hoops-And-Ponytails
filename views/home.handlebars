@@ -2,17 +2,17 @@
   {{>navbar/nav}}
 </div>
 
-<h1>Welcome{{userName}}</h1>
+<!-- <h1>Welcome{{userName}}</h1> <button id="btnStart" class="button" type="button" data-toggle="example-dropdown-bottom-center" hrerf="/buildyourteam">Start Here</button>
+       -->
 
         <!--Start Button inside the picture-->
 
 <div class="card" style="width: 300px;">
-  <img src="/public/img/img1.jpg" alt="Basketball">
-  <div class="card-section">
+  <img src="/assets/img/ball.png" alt="Basketball"/>
+  
     <div>
-      <button id="btnStart" class="button" type="button" data-toggle="example-dropdown-bottom-center">Start Here</button>
-      <a href="/buildyourteam" style="color: orangered">Build a Team </a>
-    </div>
+      <a href="/buildyourteam" class="button"style="color: orangered">Build a Team </a>
+      
   </div>
 </div>
 
@@ -29,7 +29,13 @@
   
 
 
-  yourTeam.on("click", function (event){
+ 
+});
+
+</script>
+
+
+<!-- yourTeam.on("click", function (event){
     event.preventDefault(event); 
     console.log("clicked started");
     checkTeams();
@@ -46,6 +52,5 @@
       }
     })
   }
-});
 
-</script>
+  -->
