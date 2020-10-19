@@ -83,8 +83,10 @@ module.exports = function(app){
     res.render("editteams")
   });
   app.get("/yourteam", (req,res) => {
-    db.Team.findAll({})
-    res.render("yourteam")
+    db.Team.findAll().then(function(data){
+      res.render("yourteam",{teams:data})
+    });
+  
   });
   
   app.get("/home", (req,res) => {
