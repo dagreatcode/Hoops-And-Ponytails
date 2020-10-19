@@ -90,10 +90,34 @@
             loop: true
     });
   });
+  
+
+
 </script>
 
+<div id = "animation">
+      <img src="/assets/img/wnbaLogo.png" class='player'>
+      <img src="/assets/img/ball.png" class="basketball">
+      <img src="/assets/img/Basketball Goal.png"class="hoop">   
+</div>
 
+<div id="basketball"></div>
 
+  <svg xmlns="http://www.w3.org/2000/svg" width="645" height="525" viewBox="0 0 645 525">
+    <g id="Ellipse_1" data-name="Ellipse 1" opacity ='1' fill="none" stroke="#707070" stroke-width="1">
+      <ellipse cx="222.5" cy="-20.5" rx="322.5" ry="262.5" stroke="none"/>
+      <ellipse cx="452.5" cy="-250.5" rx="322" ry="262" fill="none"/>
+    </g>
+  </svg>
+
+{{!-- <script>
+anime({
+  targets: 'img.ball',
+  translateY: 250,
+  loop: true,
+  easing: 'easeInOutSine'
+});
+</script> --}}
 <!-- 
       get call to DB receive all of the teams for this username to populate the dropdown bar 
       get call to api to receive player info: player name number and average point to populate the view results div 

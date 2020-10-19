@@ -1,76 +1,44 @@
 # project-2-group-15
 
-## Set up the REPO
-1. Create New Repo.
-2. Add README and node gitignore.
-3. Add contributors (Monday).
+# Hoops and Ponytails
 
-## setup the server
+  ![MIT License Badge](https://img.shields.io/badge/license-MIT-blue)
+  ![GNU License Badge](https://img.shields.io/badge/license-GNU_GPLv3-blue)
+  ![MIT License Badge](https://img.shields.io/badge/license-ISC-blue)
+  ![MIT License Badge](https://img.shields.io/badge/license-Apache_2.0-blue)
 
-1. `touch server.js`
-2. `npm init -y` (check to see the package.json was created)
-3. `npm install express, express-handlebars, mysql`
-4. Boilerplate the server
+## Description
+Hoops and ponytails is a WNBA companion app that allows you to view player and team stats on demand. In addition, you can pit teams against one another in the team challenge mode. Simply follow on screen instructions to do so. This app was created using Node.js,handlebars, npm express, mysql, Heroku, anime.js, sequelize, and foundation styling elements.
 
-```javascript
-const express = require("express");
-const app = express();
+    
+![Image of the login page](./public/assets/img/login-screencap.PNG)
 
-const PORT = process.env.PORT || 8080;
+![Image of the team challenge page](./public/assets/img/team-challenge-screencap.PNG)
 
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
-});
-```
+## Table of Contents
 
-5. Add middleware for POST body.
-6. Add `/api/config` route to test.
+  * [Installation](#Installation)
+  * [Usage](#Usage)
+  * [Licenses](#Licenses)
+  * [Contributions](#Contributions)
+  * [Tests](#Tests)
+  * [Questions](#Questions)
 
-## Add Handlebars
-1. `npm install express-handlebars`
-2. require express handlebars in server.js.
-3. Add the handlebars middleware (view engine, etc...)
+## Installation
+  Download onto your machine, make sure you have Node.js, npm express, sequelize, foundation, anime.js, and mysql installed. 
 
-```javascript
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
-```
+## Usage
+  Run by following this heroku link __________-.
 
-4. setup your views directory with proper sub folders.
-5. add boilerplate and "triple-stache" into main.handlebars.
-```javascript
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    {{{body}}}
-</body>
-</html>
-```
+## Licenses
+  This project is licensed under the MIT,GNU GPLv3,ISC,Apache 2.0 license(s). for more information regarding licensing feel free to visit
+  [choose a license](https://choosealicense.com/)
 
-6. (optional) Include your css library and jQuery
-7. Add "Hellow WOrld" to the index.handlebars
-8. Add a server route to test the index.handlebars file.
+## Contributions
+  Please refer to email under the contacts heading to request editing permission.
 
-```javascript
-app.get("/", (req, res) => {
-    res.render("index");
-```
+## Tests
+   
 
-## Add Database/Models
-1. `npm install -g sequelize-cli`
-2. `npm install sequelize`
-3. `sequelize init:config & sequelize init:models`
-4. modify config/config.json with password and database name in development.
-```sql
-DROP DATABASE IF EXISTS starter_db;
-CREATE DATABASE starter_db;
-USE starter_db;
-```
-5. Create your first model
-6. Import db to server.js
-7. Connect the database to our server, by wrapping app.listen in ` db.sequelize.sync()`
+## Questions
+ Please forward any questions to [agcmarcus@gmail.com](agcmarcus@gmail.com) . Please refer to the code for this project and others at [https://github.com/Andrew0502](https://github.com/Andrew0502).
