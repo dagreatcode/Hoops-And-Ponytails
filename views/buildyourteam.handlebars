@@ -4,23 +4,25 @@
 
 <h3> Build Your Team</h3>
 
-{{!-- <form id="searchTeam" class="button-size" method="post" action="/players">
+{{!-- <form id="player" class="button-size" method="post" action="/players">
           <input type="text" name="player_name" placeholder="search">
-          <button> search</button>
+          
         </form> --}}
 <div class="grid-container">
   <div class="grid-x grid-margin-x small-up-2 medium-up-3">
     <div id="select-team" class="cell">
-      <form>
-        <label>Select Menu
-          <select>
-            {{#each players }}
-            <option id= "playerName">{{name}}</option>
+      <form id="player" class="button-size" >
+        <label style= "color: white">Select a Player </label>
+            <ul>
+                {{#each players }}
+            <li id= "playerName" >{{name}}       <button class="addBtn" style= "color: white" data-player="{{name}}"> add </button></li> 
             {{/each}}
-          </select>
-        </label>
+            </ul>
+          
+           
+       
 
-  
+   
         {{!-- <button id="addBtn" type="button" data-toggle="example-dropdown-top-center"
           data-apiId="{{playerId}}">Add</button> --}}
       </form>
@@ -28,7 +30,11 @@
     <div class="cell">
 
 
-      <div id="results"></div>
+      <div id="results">
+        <ul id= "resultsList"> 
+
+        </ul>
+      </div>
 
 
       <form>
@@ -71,33 +77,57 @@
 
       //variables 
 
-      var add = $("#addBtn");
+      var add = $(".addBtn");
       var save = $("#saveBtn");
-      var name = $("#playerName");
+     // var name = $("#playerName");
       var resultsDiv = $("#results");
       var h4 = $("<h4>");
+      var listDiv = $("#resultsList");
+     
+     
+      //var addPlayer = 
 
 
       var currentTeam = [];
       var index = 0;
-
+     
+      //console.log(remove)
+        // remove.on("click"),
       //onclick for add button 
 
       add.on("click", function (event) {
         event.preventDefault();
         console.log("clicked add");
-        var apiId = $(this).data("playerId")
-
+        var name = $(this).data("player");
+         //var addPlayer = $("#playerName").val();
+  //      var newPlayer = {
+    //      team_id: ,
+      //    player_name: name
+        //}
+     //   var newTeam = {
+      //    team_name: null,
+      //    user_id: 
+      //  }
         index++
-
-        currentTeam.push($("#playerName").val());
+           if( index === 12){
+              alert("Reach player limit. Save team ")
+            }
+        currentTeam.push(name);
         console.log("currentteam array", currentTeam);
-        console.log("value of name", $("#playerName").val());
+        
+        teamList();
+    var remove = $("#removeBtn");
+    remove.on("click", function (event){
+    console.log("removed button clicked")
+    //var num = $("data-number")
+    //  currentTeam.splice(,1)
+    })
+       // console.log("value of name", $("#playerName").val());
+        })
 
-
-        h4.text(currentTeam);
+//h4.text(currentTeam);
         //append tag 
-        $(resultsDiv).append(h4);
+     //   $(resultsDiv).append(h4);
 
 
         // var newPlayer = {
@@ -112,7 +142,7 @@
         //api call to 
         //get player 
         //add player to card 
-      })
+ 
 
       save.on("click", function (event) {
         event.preventDefault();
@@ -121,8 +151,42 @@
         //post create team
         // redirect to view team page
       })
+        function createPlayer(){
+          $.ajax('', {
+            type: "POST", 
+            data: newplayer
+          }).then(
+            function (){
+              console.log("player created");
+              location.reload();
+            }
+          )
+        }
+        function createTeam(){
+          $.ajax("", {
 
+          })
+        }
 
+        function teamList (){
+          listDiv.html("")
+          for(var i= 0; i < currentTeam.length; i++){
+            var li = $("<li>");
+            var btn = $("<button>");
+            
+            li.text(currentTeam[i]); 
+            btn.text("remove");
+
+            li.attr("style","color:white");
+            btn.attr("class","success button ");
+            btn.attr("id",`removeBtn ${i}`);
+    
+
+            li.append(btn);
+            listDiv.append(li);
+          }   
+                
+        }
     });
 
 

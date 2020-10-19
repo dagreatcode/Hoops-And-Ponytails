@@ -14,8 +14,26 @@ module.exports = function(app){
     // if (!userData.username) {
     //   return;
     // }
+
+    // function checkUsers(){
+    //   $.get("/api/user/", function (data){
+    //      var logoutUser = data[2].loggedin;
+    //      console.log(logoutUser);
+         
+        //  if(logoutUser){
+        //    var user = data[2].username;
+        //    $.ajax({
+        //      method: "PUT", 
+        //      url: "/api/user/" + user,
+        //      data: loggedIn
+        //    })
+        //  }
+      //  })
+      res.redirect("index")
+   //})
+
   
-    res.redirect("index")
+    
   });
 
   app.get("/teamchallenge", (req,res)=> {
@@ -44,26 +62,26 @@ module.exports = function(app){
   app.get("/buildyourteam", (req, res) => {
 
   //   var dbQuery = "SELECT name FROM playerList";
-  //   connection.createQuery()
-
+  //   connection.createQuery()  
+   
         db.PlayerList.findAll()
         .then(function (data){
          
-          console.log(data);
+          // console.log(data);
           res.render("buildyourteam", {players: data})
-        }).catch ((err)=> {
+        })
+        .catch ((err)=> {
           console.log(err)
         });
   });
 
  
   app.get("/editteams", (req,res) => {
-    db.Player.findAll({
-      where: pla
-    })
+  
     res.render("editteams")
   });
   app.get("/yourteam", (req,res) => {
+    db.Team.findAll({})
     res.render("yourteam")
   });
   

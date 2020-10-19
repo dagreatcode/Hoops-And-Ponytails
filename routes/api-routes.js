@@ -74,7 +74,11 @@ var count = 0;
     // //======================================================================================
     //     // GET route for getting all of the users
     app.get("/api/user/", function (req, res) {
-      db.User.findAll({})
+      db.User.findAll({
+        where:{
+          loggedin: true
+        }
+      })
         .then(function (dbUserGet) {
           res.json(dbUserGet);
         });
@@ -106,9 +110,13 @@ var count = 0;
           }
         })
         .then(function (dbUserSingle) {
-      
+          if(!dbUserSingle === undefined){
+            res.send("user not found")
+          }else {
+            res.send(dbUserSingle);
+          }
           console.log(dbUserSingle)
-          res.send(dbUserSingle);
+        
         });
     });
 
@@ -215,8 +223,14 @@ var count = 0;
     // });
 
     //Third Party API Calls//======================================================================================
-    app.post("/players", function (req, res) {
-      console.log(req.body)
+    //add player to team 
+    app.post("/teamPlayer", function (req, res) {
+      db.Player.create({
+        team_id: req.body.player_name, 
+        player_name:req.body.player_name
+      }).then(function (player){
+        res.json(player);
+      })
       
     })
 
