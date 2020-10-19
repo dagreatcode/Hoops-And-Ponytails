@@ -4,8 +4,12 @@
   "description": "1. Create New Repo.\r 2. Add README and node gitignore.\r 3. Add contributors (Monday).",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "dev": "react-scripts start",
+    "start": "serve -s build",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -29,6 +33,7 @@
     "mysql2": "^2.2.5",
     "nodemon": "^2.0.5",
     "request": "^2.88.2",
-    "sequelize": "^6.3.5"
+    "sequelize": "^6.3.5",
+    "serve": "^11.3.2"
   }
 }
