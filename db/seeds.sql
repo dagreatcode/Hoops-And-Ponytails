@@ -1,3 +1,13 @@
+INSERT INTO Teams (team_name,user_id)
+VALUES (“top_team”,3);
+INSERT INTO Teams (team_name,user_id)
+VALUES (“jhbh”,4);
+INSERT INTO Teams (team_name,user_id)
+VALUES (“srtg”,5);
+INSERT INTO Teams (team_name,user_id)
+VALUES (“jagernk”,6);
+INSERT INTO Teams (team_name,user_id)
+VALUES (“oijio”,9);
 
 
 INSERT INTO Users ( username)  

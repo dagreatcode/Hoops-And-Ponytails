@@ -2,70 +2,9 @@
   const express = require("express");
   const app = express.Router();
   const db = require("../models");
-  const apiURL = "http://api.sportradar.us/wnba/trial/v7/en/players/03e541cb-d11c-4975-b656-f6e7febcda7d/profile.json?api_key="
-  const apiKey = "226774v99bae546n3skmrm3a"
+  
 
 var count = 0;
-
-
-// function getStats(){
-//   count++;
-//   axios.get("http://api.sportradar.us/wnba/trial/v7/en/players/03e541cb-d11c-4975-b656-f6e7febcda7d/profile.xml?api_key=226774v99bae546n3skmrm3a")
-// .then(function (res){
-//   // var playerstats = res.data.seasons[1].teams[1]
-//   console.log(res.data.seasons[3].teams.total);
-//   // console.log("block",playerstats.average.Blocks )
-//   // console.log("steals",playerstats.average.Steals)
-//   // console.log("assists",playerstats.average.Assists)
-//   // console.log("rebounds",playerstats.average.Rebounds)
-//   // console.log("points",playerstats.average.points)
-// }).catch((err)=>{
-//   console.log(err);
-// });
-
-// }
-
-// getStats();
-
-
-
-  // axios.get("http://api.sportradar.us/wnba/trial/v7/en/teams/0699edf3-5993-4182-b9b4-ec935cbd4fcc/profile.json?api_key=226774v99bae546n3skmrm3a"
-  // ).then(function(res){
-  //   console.log(res.data.players)
-  // // var teamRoster = res.data.players;
-  //   //   for(var p=0; p< teamRoster.length; p++ ){
-  //   //     players.push({teamId: teams[r].teamId, teamName: teams[r].teamName, playerId: teamRoster[p].id, playerName: teamRoster[p].full_name, jerseyNumber: teamRoster[p].jersey_number,position: teamRoster[p].position, exp:teamRoster[p].experience  })
-  //   //   };
-  //     // return players
-  // }).catch((err)=>{
-  //   if (err) {
-  //     console.log("error in players call")
-  //   };
-  // });
-  //   for (var r = 0; r< teams.length; r++){
-
-  //     var url = "http://api.sportradar.us/wnba/trial/v7/en/teams/" + teams[r].teamId + "/profile.json?api_key=226774v99bae546n3skmrm3a" ;
-  //     axios.get(url).then(function (res){
-  //       var teamRoster = res.data.players;
-  //       for(var p=0; p< teamRoster.length; p++ ){
-  //         players.push({teamId: teams[r].teamId, teamName: teams[r].teamName, playerId: teamRoster[p].id, playerName: teamRoster[p].full_name, jerseyNumber: teamRoster[p].jersey_number,position: teamRoster[p].position, exp:teamRoster[p].experience  })
-  //       };
-  //       return players
-  //     }).then(function(players){
-  //       console.log(players);
-  //     }).catch((err)=>{
-  //       if (err) {
-  //         console.log("error in players call")
-  //       };
-  //     });
-  //   }
-  // }).catch ((err)=> {
-  //   if(err){ 
-  //     console.log("error is overall get ")
-  //   };
-  // });
-
-
 
 
 
@@ -179,40 +118,40 @@ var count = 0;
     //   //======================================================================================
 
     // PUT route for updating users
-    // app.put("/api/user", function (req, res) {
-    //   db.User.update(req.body, {
-    //       where: {
-    //         id: req.body.user_id
-    //       }
-    //     })
-    //     .then(function (dbUserPut) {
-    //       res.json(dbPlayerPut);
-    //     });
-    // });
+    app.put("/api/user", function (req, res) {
+      db.User.update(req.body, {
+          where: {
+            id: req.body.user_id
+          }
+        })
+        .then(function (dbUserPut) {
+          res.json(dbPlayerPut);
+        });
+    });
 
-    // // PUT route for updating teams
-    // app.put("/api/team", function (req, res) {
-    //   db.Team.update(req.body, {
-    //       where: {
-    //         id: req.body.team_id
-    //       }
-    //     })
-    //     .then(function (dbTeamPut) {
-    //       res.json(dbTeamPut);
-    //     });
-    // });
+    // PUT route for updating teams
+    app.put("/api/team", function (req, res) {
+      db.Team.update(req.body, {
+          where: {
+            id: req.body.team_id
+          }
+        })
+        .then(function (dbTeamPut) {
+          res.json(dbTeamPut);
+        });
+    });
 
     // PUT route for updating players
-    // app.put("/api/player", function (req, res) {
-    //   db.Player.update(req.body, {
-    //       where: {
-    //         id: req.body.player_id
-    //       }
-    //     })
-    //     .then(function (dbPlayerPut) {
-    //       res.json(dbPlayerPut);
-    //     });
-    // });
+    app.put("/api/player", function (req, res) {
+      db.Player.update(req.body, {
+          where: {
+            id: req.body.player_id
+          }
+        })
+        .then(function (dbPlayerPut) {
+          res.json(dbPlayerPut);
+        });
+    });
 
     //Third Party API Calls//======================================================================================
     app.post("/players", function (req, res) {
