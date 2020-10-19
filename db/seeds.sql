@@ -22,8 +22,7 @@ VALUES ("John Q Public");
 
 
 
-
-INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
+INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks)
 VALUES("Lexie Brown",5.5,1.3,1.4,0.9,0.0);
 INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
 VALUES("Cierra Burdick",2.0,1.3,0.6,0.3,0.2);
@@ -34,13 +33,16 @@ VALUES("Liz Cambage",16.7,7.6,1.5,0.6,1.5);
 INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
 VALUES("Jordin Canada",7.7,2.0,4.5,1.5,0.1);
 INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
-VALUES("Emma Cannon",4.3,3.5,0.3,0.1);
+VALUES("Emma Cannon",4.3,3.5,0.3,0.1,0.1);
+
+
+
 INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
 VALUES("Bridget Carleton",4.9,2.7,1.8,0.5,0.0);
 INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
 VALUES("Essence Carson",7.2,2.3,1.2,0.8,0.3 );
 INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
-VALUES("Chennedy Carter",17.4,2.3,0.9,0.3 );
+VALUES("Chennedy Carter",17.4,2.3,3.4,0.9,0.3);
 INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
 VALUES("Kaila Charles", 5.4,2.6,0.9,0.8,0.3 );
 INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
@@ -59,6 +61,8 @@ INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_
 VALUES("Sydney Colson",3.3,0.9,2.0,0.7,0.1 );
 INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
 VALUES("Te'a Cooper",7.0,1.0,2.0,0.7,0.0 );
+
+
 INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
 VALUES("Kahleah Copper", 7.9,2.7,0.9,0.5,0.1);
 INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
@@ -98,9 +102,11 @@ VALUES("Chelsea Gray", 11.7,3.0,4.2,1.0,0.2);
 INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
 VALUES("Reshanda Gray",4.0,3.4,0.3,0.3,0.2 );
 INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
-VALUES("Brittney Griner",17.3,5.7,7.4,1.7,0.5,2.9 );
+VALUES("Brittney Griner",17.3,7.4,1.7,0.5,2.9 );
+
+
 INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
-VALUES("Megan Gustafson",2.6,1.4,2.2,0.2,0.1,0.2 );
+VALUES("Megan Gustafson",2.6,2.2,0.2,0.1,0.2 );
 INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
 VALUES("Marie Gülich",2.5,1.9,0.4,0.2,0.5);
 INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
@@ -133,7 +139,7 @@ VALUES("Sabrina Ionescu",18.3,4.7,4.0,0.7,0.0);
 INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
 VALUES("Briann January",8.4,1.8,3.6,1.0,0.2 );
 INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
-VALUES("Moriah Jefferson", 9.9,2.0,3.6,1.3,.0.1);
+VALUES("Moriah Jefferson", 9.9,2.0,3.6,1.3,0.1);
 INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
 VALUES("Alisia Jenkins",1.6,0.8,0.0,0.0,0.0 );
 INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
@@ -220,7 +226,7 @@ VALUES("Sugar Rodgers",7.0,2.5,1.6,0.7,0.3 );
 INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
 VALUES("Tierra Ruffin-Pratt",5.8,3.2,4.7,0.8,0.3);
 INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
-VALUES("Mercedes Russell",4.7,3.9,0.7,0.60.4 );
+VALUES("Mercedes Russell",4.7,3.9,0.7,0.6,0.4 );
 INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
 VALUES("Satou Sabally",13.9,7.8,2.5,0.8,0.9);
 INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
@@ -269,16 +275,15 @@ INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_
 VALUES("Megan Walker",3.3,1.5,0.3,0.2,0.0);
 INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
 VALUES("Shatori Walker-Kimbrough",5.6,1.3,0.9,0.7,0.3 );
+
 INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
-VALUES("Avery Warley-Talbert",);
-INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
-VALUES ("Erica Wheeler",8.9,2.4,3.7,1.0,0.0  )
+VALUES ("Erica Wheeler",8.9,2.4,3.7,1.0,0.0  );
 INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
 VALUES ("Amanda Zahui B",5.7,3.8,0.7,0.5,0.7);
 INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
 VALUES ("Sami Whitcomb",5.5,1.6,1.5,0.8,0.1);
 INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
-VALUES("Sydney Wiese",3.9,1.1,1.5,0.30.1);
+VALUES("Sydney Wiese",3.9,1.1,1.5,0.3,0.1);
 INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
 VALUES ("Riquna Williams",10.9,2.2,1.6,1.1,0.3);
 INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
@@ -288,7 +293,7 @@ VALUES ("Courtney Williams",11.9,5.1,2.7,0.8,0.2);
 INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
 VALUES ("Elizabeth Williams", 9.4,6.3,1.2,0.8,1.7);
 INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
-VALUES ("Jocelyn "5.8,2.4,0.9,0.7,0.3)
+VALUES ("Jocelyn ",5.8,2.4,0.9,0.7,0.3);
 INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
 VALUES("Jackie Young",8.3,3.7,3.9,0.7,0.3);
 INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
@@ -306,7 +311,7 @@ VALUES("Julie Allemand",8.5,4.5,5.8,1.1,0.4);
 INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
 VALUES("Lindsay Allen",1.2,0.2,0.4,0.2,0.2);
 INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
-VALUES("Kristine Anigwe",8.0,7.0,0.0,0.0,1.0,);
+VALUES("Kristine Anigwe",8.0,7.0,0.0,0.0,1.0);
 INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
 VALUES("Ariel Atkins ",13.0,4.0,4.0,2.0,0.0);
 INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
@@ -317,14 +322,20 @@ INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_
 VALUES ("Monique Billings", 8.5,8.5,1.2,1.1,0.8);
 INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
 VALUES("Sue Bird",9.5,2.0,9.2,0.7,0.3);
+
+
 INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
-VALUES ("DeWanna Bonner",33.3,7.8,3.0,0.6);
+VALUES ("DeWanna Bonner",14.7,6.3,2.2,1.2,0.7);
 INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
 VALUES ("Jessica Breland",9.0,10.8,2.8,0.8,2.8 );
 INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
-VALUES("Brittany Brewer",0.8,1.0,0.0,0.6,0.8 )
+VALUES("Brittany Brewer",0.8,1.0,0.0,0.6,0.8 );
 INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
-VALUES("Kalani Brown",3.0,1.2,0.0,0.1,0.1)
+VALUES("Kalani Brown",3.0,1.2,0.0,0.1,0.1);
+
+-- INSERT INTO playerList (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
+-- VALUES("Avery Warley-Talbert",);
+
 
 
 

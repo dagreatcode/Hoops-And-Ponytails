@@ -8,13 +8,13 @@ const app = express();
 const db = require("./models");
 const apiRoutes = require("./routes/api-routes.js");
 const htmlRoutes = require("./routes/html-routes.js");
-
+const path = require ("path");
 const PORT = process.env.PORT || 8080;
 //api key hiding 
 
 //middleware 
 //used to interpert spaces in urls 
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname,"/public")));
 app.use(express.urlencoded({ extended: true }));
 //changing data into json
 app.use(express.json());

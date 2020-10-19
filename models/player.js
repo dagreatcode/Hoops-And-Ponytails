@@ -15,6 +15,8 @@ module.exports = function(sequelize, DataTypes) {
           type: DataTypes.DECIMAL(10,2),
           allowNull: true
       }
+    }, {
+      timestamps: false
     });
   
     // Player.associate = function(models) {
