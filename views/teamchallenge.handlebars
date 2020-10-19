@@ -1,29 +1,34 @@
 <div> 
   {{>navbar/nav}}
 </div>
-
-<h3> Team Challenge</h3>
+<div class="grid-container">
+    <div class="grid-x grid-padding-x">
+      <div class="medium-8 cell">
+        <h3> Team Challenge</h3>
+      </div>
+    </div>
+</div>
 
 <form class="challenge-form">
   <div class="grid-container">
     <div class="grid-x grid-padding-x">
       <div class="medium-4 cell">
-        <label> Team 1  
+        {{!-- <label> Team 1   --}}
           <select>
           {{#each team}}
               <option >{{team.teams}}</option>
             {{/each}} 
           </select>
-        </label>  
+        {{!-- </label>   --}}
       </div>
       <div class="medium-4 cell">
-        <label>Select Team
+        {{!-- <label>Select Team  --}}
           <select>
             {{#each team}}
               <option >{{team.teams}}</option>
             {{/each}} 
           </select>
-        </label>  
+        {{!-- </label>   --}}
       </div>
       <div class ='medium-4 cell'> 
         <input for='challengeSubmit' type="submit" value="Challenge">
@@ -55,11 +60,54 @@ $(document).ready(function (){
   //compare teams function 
   function compareTeams(){
 
-    $.get("/players",{
-      points: points, 
+    $.get("/api/player", function(req,res) {
+      if(req.params.player) {
+        db.Player.findAll({
+          where: {
+            team_id: req.params.team_id
+          }.then(function(result) {
+            return res.json ({
+                points: points, 
+                rebounds: rebounds,
+                assist: assist,
+                steal: steal,
+                block: block
+            })
+          })
+        });
+      };
+    });
+
+
+      var teamOne = [95, 20, 14, 8, 2];
+      var teamTwo = [100, 12, 20, 10, 4];
+
+      function average(score) {
+      var total = 0;
+      for(var i = 0; i < stats.length; i++){
+        total += stats[i];
+    
       
-    })
-  }
+      var avg = total/stats.length
+      return avg;
+
+      var teamOneAvg = average(teamOne);
+      var teamTwoAvg = average(teamTwo);
+      var winner;
+      
+      if(teamOneAvg > teamTwoAvg) {
+        winner = "Team One";
+      }else if (teamOneAvg < teamTwoAvg) {
+        winner = "Team Two";
+      }else {
+        winner = "It's a tie!";
+      }
+      return ("Team One's average score was" + teamOneAvg && "Team Two's average score was" + teamTwoAvg);
+      }
+      }
+  };
+
+
    //create the results card 
   function createResultsCard(){
 

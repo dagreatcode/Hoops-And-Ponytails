@@ -1,12 +1,12 @@
-<div > 
   {{>navbar/nav}}
-</div>
 
-<div class='backgroundWrapper'>
 <div class="grid-container">
     <div class="grid-x grid-padding-x">
-      <div class="medium-7 cell">
-    <h2>Edit Teams</h2>
+      <div class="medium-8 cell">
+        <h2>Edit Teams</h2>
+      </div>
+    </div>
+</div>
 
 <!--lIST OF PLAYERS, DELETE BUTTON IS LOCATED NEXT TO EACH PLAYER-->
  <div class="grid-container">
@@ -19,11 +19,11 @@
                 <th> Remove from Team </th>
             </tr>
 
-            {{#each players}}
+            {{#each teamPlayers}}
 
             <tr>
                 <th>{{playerName}}</th>
-                <th><button data-apiId="{{playerId}}" class= "button" id="delplayer" data-toggle="example-dropdown-bottom-center" type="button">Delete</button></th>
+                <th><button data-apiId="{{playerId}}" class= "alert button" id="delplayer" data-toggle="example-dropdown-bottom-center" type="button">Delete</button></th>
             </tr>
                 
             {{/each}}
@@ -33,10 +33,22 @@
   </div>
 
 <!--SAVE CHANGES MADE TO YOUR TEAMS-->
-
-  <h3>Update Your Teams{{this.id}}</h3>
+<div class="grid-container">
+    <div class="grid-x grid-padding-x">
+      <div class="medium-8 cell">
+        <h3>Update Your Teams{{this.id}}</h3>
+      </div>
+    </div>
+</div>
   
-      <button class="button" id="updateteams" type="submit" data-toggle="example-dropdown-bottom-center">Update Team!</button>
+  <div class="grid-container">
+    <div class="grid-x grid-padding-x">
+      <div class="medium-8 cell">
+        <button class="button" id="updateteams" type="submit" data-toggle="example-dropdown-bottom-center">Update Team!</button>
+      </div>
+    </div>
+</div>
+      
 
 
 
@@ -50,17 +62,17 @@
 
 $(document).ready(function (){
 
-  $.get("/api/team/", function(data) {
+  $.get("/api/teamPlayers/", function(data) {
     if (data.length !== 0) {
       for(var i = 0; i < data.length; i++) {
 
         var row = $("<div>");
         var playerList = $(".player_list");
 
-        row.append("<p>" + data[i].team "</p>");
-        row.append("<p>" + data[i].player "</p>");
+        row.append("<p>" + data[i].team _id "</p>");
+        row.append("<p>" + data[i].player_id "</p>"); 
 
-        $(.player_List).prepend(row);
+        $(.player_List).append(row);
       };
     };
   });
