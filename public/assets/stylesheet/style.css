@@ -1,5 +1,5 @@
 .backgroundWrapper {
-    background-image: url("../img/back3.png");
+    background-image: url("../img/backnum1.png");
     background-repeat: no-repeat;
     background-size: cover;
     -webkit-background-size: cover;
@@ -9,9 +9,9 @@
     z-index: 0;
 }
 
-/* #backgroundWrapper {
-    background-image: url('./img/back1.png') no-repeat center center fixed;
-} */
+#backgroundWrapper {
+    background-image: url('/assets/img/backnum1.png') no-repeat center center fixed;
+}
 
 h1{
     color: red;
