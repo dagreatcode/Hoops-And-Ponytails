@@ -1,41 +1,40 @@
-<div > 
+<div>
   {{>navbar/nav}}
 </div>
 
 <div class='backgroundWrapper'>
-<div class="grid-container">
+  <div class="grid-container">
     <div class="grid-x grid-padding-x">
       <div class="medium-7 cell">
         <h2>Log In</h2>
       </div>
     </div>
-</div>
-    
-{{#if message}}
-<div class="error">
-  <span style="color: red">{{message}}</span>
-</div>
-{{/if}}
-
-{{#each user}}
-{{/each}}
-
-<form class = "login">
-  <div class="grid-container">
-    <div class="grid-x grid-padding-x">
-      <div class="medium-7 cell">
-        {{!-- <label>Username: --}}
-          <input type="text" id="username-input" placeholder ="Username">
-        {{!-- </label> --}}
-      </div>
-        
-
-      <button class="button" id="loginBtn"  type="submit" data-toggle="example-dropdown-bottom-center">Log In</button>
-
-    </form>
-    </form>
-    </div>
   </div>
+
+  {{#if message}}
+  <div class="error">
+    <span style="color: red">{{message}}</span>
+  </div>
+  {{/if}}
+
+  {{#each user}}
+  {{/each}}
+
+  <form class="login">
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <div class="medium-7 cell">
+          {{!-- <label>Username: --}}
+          <input type="text" id="username-input" placeholder="Username">
+          {{!-- </label> --}}
+        </div>
+
+
+        <button class="button" id="loginBtn" type="submit" data-toggle="example-dropdown-bottom-center">Log In</button>
+  </form>
+  <div id="notfound"> </div>
+</div>
+</div>
 </form>
 
 {{!-- <form >
@@ -51,20 +50,20 @@
 <br>
 
 <!--ADDED LINK TO SIGN UP PAGE-->
-  <div class="grid-container">
-    <div class="grid-x grid-padding-x">
-      <div class="medium-7 cell">
-    <p>Don't have an account? Sign up <a href="/signup">here</a></p>
+<div class="grid-container">
+  <div class="grid-x grid-padding-x">
+    <div class="medium-7 cell">
+      <p>Don't have an account? Sign up <a href="/signup">here</a></p>
 
-</div>
-</div>
-</div>
-
-  {{#if message}}
-  <div class="error">
-    <span style="color: red">{{message}}</span>
+    </div>
   </div>
-  {{/if}}
+</div>
+
+{{#if message}}
+<div class="error">
+  <span style="color: red">{{message}}</span>
+</div>
+{{/if}}
 
 
 <!--<script src="./js/index.js" type="text/javascript"></script>
@@ -109,41 +108,43 @@
 
 
 <script type="text/javascript">
-  
-$(document).ready(function() {  
 
-  var logInForm = $("form.login");
-  var userNameInput = $("input#username-input");
-  var loggedIn = {
-    loggedIn: true} 
+  $(document).ready(function () {
 
-  $("#loginBtn").on("click", function (event) {
+    var logInForm = $("form.login");
+    var userNameInput = $("input#username-input");
+    var notFound = $("#notFound");
+    var loggedIn = {
+      loggedIn: true
+    }
+
+    $("#loginBtn").on("click", function (event) {
       event.preventDefault();
-    // console.log(userNameInput.val())
-      console.log("clicked");
+      // console.log(userNameInput.val())
+      //console.log("clicked");
       var user = userNameInput.val();
       userLogin(user);
-  });
+    });
 
 
 
-  function userLogin(user) {
-  //console.log("user",user)
-  var userstring = ":" +user ;
- // console.log("userstring:", userstring, "user:", typeof(user));
-  $.get("/api/users/"+ user,function (data) {
-    //console.log("data", data);
-    if(!data){
-      alert("Please sign up")
-    }else {
-        validUser(user);
-        ;
-      };   
-      
-   });
-   
-  };
-
+    function userLogin(user) {
+      //console.log("user",user)
+     notFound.html("");
+      // console.log("userstring:", userstring, "user:", typeof(user));
+      $.get("/api/users/" + user, function (data) {
+          console.log("data", data);
+               if (data === "user not found") {
+                 alert("Please sign up")
+            
+                 //console.log(data)
+        
+       
+        } else {
+        console.log("User found")
+       
+      //   validUser(user);
+        };
     function validUser(user) {
     $.ajax({
       method: "PUT",
@@ -170,14 +171,29 @@ $(document).ready(function() {
   
 });
 
- 
+      })
+
+     
+
+    };
+
+    function validUser(user) {
+      $.ajax({
+        method: "PUT",
+        url: "/api/user/" + user,
+        data: loggedIn
+      })
+        .then(function (data) {
+       
+          window.location.replace("/home")
+        })
+    };
+
+      
+  });
+
+
 
 //write get call to check if username is in db 
 //post call to change loggin boolean to true
 </script>
-
-
-
-
-
-
