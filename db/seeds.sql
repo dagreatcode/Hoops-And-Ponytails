@@ -1,20 +1,20 @@
 
 
-INSERT INTO Users ( Usersname)  
+INSERT INTO Users ( username)  
 VALUES ("John Smith");
-INSERT INTO Users ( Usersname)  
+INSERT INTO Users ( username)  
 VALUES ("Joan Smith");
-INSERT INTO Users ( Usersname)  
+INSERT INTO Users ( username)  
 VALUES ("John Doe");
-INSERT INTO Users ( Usersname)  
+INSERT INTO Users ( username)  
 VALUES ("Jane Smith");
-INSERT INTO Users ( Usersname)  
+INSERT INTO Users ( username)  
 VALUES ("Jane Smith");
-INSERT INTO Users ( Usersname)  
+INSERT INTO Users ( username)  
 VALUES ("Silas Marner");
-INSERT INTO Users ( Usersname)  
+INSERT INTO Users ( username)  
 VALUES ("Michael Jackson");
-INSERT INTO Users ( Usersname)  
+INSERT INTO Users ( username)  
 VALUES ("Darth Vader");
 INSERT INTO Users ( username)  
 VALUES ("John Q Public");
@@ -44,35 +44,35 @@ VALUES("Emma Cannon",4.3,3.5,0.3,0.1,0.1);
 
 
 
-INSERT INTO s (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
+INSERT INTO PlayerLists (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
 VALUES("Bridget Carleton",4.9,2.7,1.8,0.5,0.0);
-INSERT INTO s (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
+INSERT INTO PlayerLists (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
 VALUES("Essence Carson",7.2,2.3,1.2,0.8,0.3 );
-INSERT INTO s (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
+INSERT INTO PlayerLists (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
 VALUES("Chennedy Carter",17.4,2.3,3.4,0.9,0.3);
-INSERT INTO s (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
+INSERT INTO PlayerLists (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
 VALUES("Kaila Charles", 5.4,2.6,0.9,0.8,0.3 );
-INSERT INTO s (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
+INSERT INTO PlayerLists (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
 VALUES("Tina Charles",18.1,9.5,2.3,0.8,1.0 );
-INSERT INTO s (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
+INSERT INTO PlayerLists (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
 VALUES("Layshia Clarendon", 7.3,2.7,3.0,0.7,0.0);
-INSERT INTO s (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
+INSERT INTO PlayerLists (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
 VALUES("Alysha Clark",6.9,3.4,1.4,0.7,0.2 );
-INSERT INTO s (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
+INSERT INTO PlayerLists (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
 VALUES("Alaina Coates",2.9,2.9,0.3,0.2,0.3 );
-INSERT INTO s (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
+INSERT INTO PlayerLists (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
 VALUES("Nia Coffey",3.8,2.4,0.5,0.3,0.3 );
-INSERT INTO s (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
+INSERT INTO PlayerLists (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
 VALUES("Napheesa Collier",14.3,7.5,2.9,1.9,1.1 );
-INSERT INTO s (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
+INSERT INTO PlayerLists (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
 VALUES("Sydney Colson",3.3,0.9,2.0,0.7,0.1 );
-INSERT INTO s (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
+INSERT INTO PlayerLists (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
 VALUES("Te'a Cooper",7.0,1.0,2.0,0.7,0.0 );
 
 
-INSERT INTO s (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
+INSERT INTO PlayerLists (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
 VALUES("Kahleah Copper", 7.9,2.7,0.9,0.5,0.1);
-INSERT INTO s (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
+INSERT INTO PlayerLists (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
 VALUES("Lauren Cox", 3.6,3.3,1.4,0.4,0.3 );
 INSERT INTO PlayerLists (name,avg_points,avg_rebounds,avg_assists,avg_steals,avg_blocks )
 VALUES("Sophie Cunningham",3.8,1.3,0.8,0.4,0.1 );
