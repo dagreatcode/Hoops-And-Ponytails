@@ -38,18 +38,37 @@
    
 
 <div id = "animation">
-    <img src="/assets/img/wnba2.png" class='player'>
+    <img src="/assets/img/WNBA.png" class='player'>
     <img src="/assets/img/ball.png" class="basketball">
-    <img src="/assets/img/Basketball Goal.png"class="hoop">
+    {{!-- <img src="/assets/img/basketballgoal.png"class="hoop"> --}}
 
 </div>
 <div id="basketball"></div>
 <svg xmlns="http://www.w3.org/2000/svg" width="645" height="525" viewBox="0 0 645 525">
-  <g id="Ellipse_1" data-name="Ellipse 1" opacity ='1' fill="none" stroke="#707070" stroke-width="1">
+  <g id="Ellipse_1" data-name="Ellipse 1" opacity ='0' fill="none" stroke="#707070" stroke-width="1">
     <ellipse cx="222.5" cy="-20.5" rx="322.5" ry="262.5" stroke="none"/>
-    <ellipse cx="452.5" cy="-250.5" rx="322" ry="262" fill="none"/>
+    <ellipse cx="352.5" cy="-150.5" rx="322" ry="262" fill="none"/>
   </g>
 </svg>
+
+<style>
+  .basketball{
+    position: absolute;
+    left: 600px;
+    top: 450px;
+  }
+  .hoop {
+    position: absolute;
+    right: 530px;
+    bottom: 100px;
+    
+  }
+  .player{
+    position: absolute;
+    left: 400px;
+    top: 500px;
+  }
+</style>
 
 
 <script >
@@ -94,7 +113,7 @@
 
 </script>
 
-<div id = "animation">
+{{!-- <div id = "animation">
       <img src="/assets/img/wnbaLogo.png" class='player'>
       <img src="/assets/img/ball.png" class="basketball">
       <img src="/assets/img/Basketball Goal.png"class="hoop">   
@@ -107,7 +126,7 @@
       <ellipse cx="222.5" cy="-20.5" rx="322.5" ry="262.5" stroke="none"/>
       <ellipse cx="452.5" cy="-250.5" rx="322" ry="262" fill="none"/>
     </g>
-  </svg>
+  </svg> --}}
 
 {{!-- <script>
 anime({
