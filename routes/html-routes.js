@@ -58,6 +58,9 @@ module.exports = function(app){
 
  
   app.get("/editteams", (req,res) => {
+    db.Player.findAll({
+      where: pla
+    })
     res.render("editteams")
   });
   app.get("/yourteam", (req,res) => {

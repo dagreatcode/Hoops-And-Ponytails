@@ -74,7 +74,7 @@ var count = 0;
     // //======================================================================================
     //     // GET route for getting all of the users
     app.get("/api/user/", function (req, res) {
-      db.User.findAll()
+      db.User.findAll({})
         .then(function (dbUserGet) {
           res.json(dbUserGet);
         });
@@ -98,14 +98,17 @@ var count = 0;
 
     // //======================================================================================
     // Get route for retrieving a single user
-    app.get("/api/user/:user_id", function (req, res) {
-      db.User.findOne({
+    app.get("/api/users/:username", function (req, res) {
+      db.User.findAll({
+        attributes: ['username'],
           where: {
-            id: req.params.user_id
+            username: req.params.username
           }
         })
         .then(function (dbUserSingle) {
-          res.json(dbUserSingle);
+      
+          console.log(dbUserSingle)
+          res.send(dbUserSingle);
         });
     });
 
@@ -176,45 +179,57 @@ var count = 0;
     //   //======================================================================================
 
     // PUT route for updating users
-    app.put("/api/user", function (req, res) {
-      db.User.update(req.body, {
-          where: {
-            id: req.body.user_id
-          }
-        })
-        .then(function (dbUserPut) {
-          res.json(dbPlayerPut);
-        });
-    });
+    // app.put("/api/user", function (req, res) {
+    //   db.User.update(req.body, {
+    //       where: {
+    //         id: req.body.user_id
+    //       }
+    //     })
+    //     .then(function (dbUserPut) {
+    //       res.json(dbPlayerPut);
+    //     });
+    // });
 
-    // PUT route for updating teams
-    app.put("/api/team", function (req, res) {
-      db.Team.update(req.body, {
-          where: {
-            id: req.body.team_id
-          }
-        })
-        .then(function (dbTeamPut) {
-          res.json(dbTeamPut);
-        });
-    });
+    // // PUT route for updating teams
+    // app.put("/api/team", function (req, res) {
+    //   db.Team.update(req.body, {
+    //       where: {
+    //         id: req.body.team_id
+    //       }
+    //     })
+    //     .then(function (dbTeamPut) {
+    //       res.json(dbTeamPut);
+    //     });
+    // });
 
     // PUT route for updating players
-    app.put("/api/player", function (req, res) {
-      db.Player.update(req.body, {
-          where: {
-            id: req.body.player_id
-          }
-        })
-        .then(function (dbPlayerPut) {
-          res.json(dbPlayerPut);
-        });
-    });
+    // app.put("/api/player", function (req, res) {
+    //   db.Player.update(req.body, {
+    //       where: {
+    //         id: req.body.player_id
+    //       }
+    //     })
+    //     .then(function (dbPlayerPut) {
+    //       res.json(dbPlayerPut);
+    //     });
+    // });
 
     //Third Party API Calls//======================================================================================
     app.post("/players", function (req, res) {
       console.log(req.body)
       
     })
+
+
+    app.put("/api/user/:username", function (req, res) {
+      db.User.update(
+        req.body , 
+        {where: {username: req.body.username
+        }})
+      .then(function (dbUserPut) {
+        res.json(dbUserPut);
+      });
+    });
+  
 
   }

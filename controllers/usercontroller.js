@@ -15,25 +15,25 @@ module.exports = function (app) {
 
   // GET route for getting all of the users
   app.get("/api/user/", function (req, res) {
-    db.User.findAll()
+    db.User.findAll({})
       .then(function (dbUserGet) {
         res.json(dbUserGet);
       });
   });
 
   // Get route for retrieving a single user
-  app.get("/api/user/", function (req, res) {
-    db.User.findAll({
+ // Get route for retrieving a single user
+ app.get("/api/users/:username", function (req, res) {
+  db.User.findAll({
+    attributes: ['username'],
       where: {
         username: req.params.username
       }
     })
     .then(function (dbUserSingle) {
-      res.json(dbUserSingle);
-    })
-    .catch((err) =>{
-      console.log(err)
-      console.log("error inside of getUser function");
+  
+      console.log(dbUserSingle)
+      res.send(dbUserSingle);
     });
   });
 
@@ -50,14 +50,16 @@ module.exports = function (app) {
   });
 
   // PUT route for updating users
-  app.put("/api/user", function (req, res) {
-    db.User.update(req.body, {
-      where: {
-        id: req.body.user_id
-      }
-    })
+  app.put("/api/user/:username", function (req, res) {
+    db.User.update(
+      {loggedin: true }, 
+      {where: req.params.username
+      })
     .then(function (dbUserPut) {
       res.json(dbPlayerPut);
     });
   });
 };
+
+
+

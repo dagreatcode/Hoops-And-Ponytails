@@ -82,51 +82,46 @@ $(document).ready(function() {
 
   var logInForm = $("form.login");
   var userNameInput = $("input#username-input");
+  var loggedIn = {
+    loggedIn: true} 
 
   $("#loginBtn").on("click", function (event) {
       event.preventDefault();
-      //var newlogin = $(this).data("loggedin");
-      //var newloggedinState = {loggedin:newlogin}; 
-     
+    // console.log(userNameInput.val())
       console.log("clicked");
-
-      userLogin(userNameInput);
+      var user = userNameInput.val();
+      userLogin(user);
   });
 
-  function userLogin(username) {
-    $.ajax("/api/user/", {
-       type: 'GET',
-       data: username
-    }).then(function(){
-
-         if(!username ) {
-           alert("Please sign up")
-           //validUser();
-         }else {
-           window.location.replace("/home");
-        };   
-    })
-  };
 
 
+  function userLogin(user) {
+  //console.log("user",user)
+  var userstring = ":" +user ;
+ // console.log("userstring:", userstring, "user:", typeof(user));
+  $.get("/api/users/"+ user,function (data) {
+    //console.log("data", data);
+    if(!data){
+      alert("Please sign up")
+    }else {
+        validUser(user);
+        ;
+      };   
       
-  
-
-  
-
-
-  function validUser(username) {
-    $.ajax("/api/user/:user_id", {
-        type: 'PUT',
-        data: newloggedinState
-        }).then(function() {
-            console.log("successfully logged in");
-        
-        }).then(function() {
-            window.location.href = "/home";
-        });
+   });
+   
   };
 
+    function validUser(user) {
+    $.ajax({
+      method: "PUT",
+      url: "/api/user/"+user,
+      data: loggedIn
+    })
+    .then(function(data) {
+         window.location.replace("/home")
+        })
+  };
   
 });
 
