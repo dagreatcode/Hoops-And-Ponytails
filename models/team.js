@@ -1,3 +1,5 @@
+const { Sequelize } = require(".");
+
 module.exports = function(sequelize, DataTypes) {
 
     var Team = sequelize.define("Team",{
@@ -21,4 +23,5 @@ module.exports = function(sequelize, DataTypes) {
     
       return Team;
 
+      
 };

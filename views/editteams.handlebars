@@ -19,7 +19,7 @@
                 <th> Remove from Team </th>
             </tr>
 
-            {{#each players}}
+            {{#each teamPlayers}}
 
             <tr>
                 <th>{{playerName}}</th>
@@ -62,17 +62,17 @@
 
 $(document).ready(function (){
 
-  $.get("/api/team/", function(data) {
+  $.get("/api/teamPlayers/", function(data) {
     if (data.length !== 0) {
       for(var i = 0; i < data.length; i++) {
 
         var row = $("<div>");
         var playerList = $(".player_list");
 
-        row.append("<p>" + data[i].team "</p>");
-        row.append("<p>" + data[i].player "</p>");
+        row.append("<p>" + data[i].team _id "</p>");
+        row.append("<p>" + data[i].player_id "</p>"); 
 
-        $(.player_List).prepend(row);
+        $(.player_List).append(row);
       };
     };
   });
