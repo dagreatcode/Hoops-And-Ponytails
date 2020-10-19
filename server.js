@@ -29,7 +29,7 @@ app.set("view engine", "handlebars");
 apiRoutes(app);
 htmlRoutes(app);
 
-//
+// // 
 // // views routes
 app.get("/", (req, res) => {
     res.render("index");
