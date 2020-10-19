@@ -9,12 +9,15 @@ module.exports = function(sequelize, DataTypes) {
         user_id: {
             type: DataTypes.STRING
         } 
-    });
+    },{
+        timestamps: false
+      }
+    );
 
     Team.associate = function(models) {
-        Team.belongsToMany(models.Player, {
-            through: "player",
-            foreignKey: "user_id",
+        Team.hasMany(models.Player, {
+            // through: "player",
+            foreignKey: "user_id"
         });
       };
     
